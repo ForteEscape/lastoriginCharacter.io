@@ -15,7 +15,6 @@
 		<title>라스트 오리진 케릭터 도감</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<script src="js/randomImage.js"></script>
 		
 		<!-- init -->
 		<style>
@@ -87,11 +86,13 @@
 		</div>
 		
 		<main role="main" class="container">
-			<div class="my- p-3 bg-white rounded box shadow" onload="showRandomImage()">
-				<img id="background" style="width:100%">
+			<div class="my- p-3 bg-white rounded box shadow">
+				<!--<img id="background" style="width:100%">-->
+				<img onload="showRandomImage()" id="background" border="0">
 			</div>
 		</main>
 		<script src="dist/popper.min.js"></script>
 		<script src="css/bootstrap.min.js"></script>
+		<script src="js/randomImage.js"></script>
 	</body>
 </html>
