@@ -85,14 +85,28 @@
 			</header>
 		</div>
 		
-		<main role="main" class="container">
+		<main role="main" class="container" onload="showRandomImage()">
 			<div class="my- p-3 bg-white rounded box shadow">
-				<!--<img id="background" style="width:100%">-->
-				<img onload="showRandomImage()" id="background" border="0">
+				<img id="background" style="width:100%">
 			</div>
 		</main>
 		<script src="dist/popper.min.js"></script>
 		<script src="css/bootstrap.min.js"></script>
-		<script src="js/randomImage.js"></script>
+		
+		<script language = "javascript">
+			var imgArray = new Array();
+			imgArray[0] = "workspace/origin_test/img/BGA/BGA1.jpg";
+			imgArray[1] = "workspace/origin_test/img/BGA/BGA2.jpg";
+			imgArray[2] = "workspace/origin_test/img/BGA/BGA3.jpg";
+			imgArray[3] = "workspace/origin_test/img/BGA/BGA4.jpg";
+			
+			function showRandomImage(){
+				var imgNum = Math.round(Math.random()*(imgArray.Length));
+				var objImg = document.getElementById("background");
+				objImg.src = imgArray[imgNum];
+			}
+			
+			window.onload = showRandomImage;
+		</script>
 	</body>
 </html>
