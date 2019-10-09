@@ -9,12 +9,13 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-149579232-1');
 		</script>
-
+		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>라스트 오리진 케릭터 도감</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/randomImage.js"></script>
 		
 		<!-- init -->
 		<style>
@@ -76,17 +77,18 @@
 		<div class="container">
 			<header>
 				<h2>
-					last_origin character list
+					라스트 오리진 유사DB
 				</h2>
 				<p>
-					last_origin character book
+					라스트 오리진 내부 케릭터(바이오로이드), 장비(칩, OS, 장비)를 업데이트합니다.
+					아직은 개발중...
 				</p>
 			</header>
 		</div>
 		
 		<main role="main" class="container">
-			<div class="my- p-3 bg-white rounded box shadow">
-				<img style="width:100%" src="img/backgroundArt.jpg">
+			<div class="my- p-3 bg-white rounded box shadow" onload="showRandomImage()">
+				<img id="background" style="width:100%">
 			</div>
 		</main>
 		<script src="dist/popper.min.js"></script>
