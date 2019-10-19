@@ -1,4 +1,4 @@
-# test.io
-> 1. test
-> 2. link <https://forteescape.github.io/test.io/>
+# lastoriginCharacter.io
+> 1. 아직 개발중..
+> 2. 사이트 링크 <https://forteescape.github.io/lastoriginCharacter.io/>
 
