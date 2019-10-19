@@ -92,6 +92,68 @@ function drawSkillInfo(idx, LVL, power, desc)
 	}
 }
 
+function drawSkillArea(json, data)
+{
+	if(data.some(el=>{return isNAN(el);}))
+	{
+		for(var i = 0; i<9; i++)
+		{
+			var color = data[i];
+			
+			var row = 3-parseINT((i)/3);
+			var colum = i+1-parseINT((i)/3)*3;
+			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
+		}
+	}
+	else if(data.find(el=>{return el<1;}) != undefined)
+	{
+		for(var i = 0; i<9; i++)
+		{
+			var color = "rgb(255, "+Math.round((213-128)/0.5*(data[i]-0.5)+128)+", 0)";
+			
+			if(data[i] == 0){ color = "rgb(45, 45, 45)"; }
+			
+			var row = 3-parseINT((i)/3);
+			var colum = i+1-parseINT((i)/3)*3;
+			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
+		}
+	}
+	else
+	{
+		for(var i = 0; i<9; i++)
+		{
+			if(data.indexOf(i+1) != -1){ var color = "rgb(255, 213, 0)";}
+			else{ var color = "rgb(50, 50, 50)";}
+			
+			var row = 3-parseINT((i)/3);
+			var colum = i+1-parseINT((i)/3)*3;
+			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
+		}
+	}
+}
+
+function changeSkill(idx)
+{
+	$('.skill-container-active').removeClass('skill-container-active');
+	$('.skill-container:eq('+idx+')').addClass('skill-container-active');
+}
+
+function writeData(str1, str2)
+{
+	if(str2 == -1)
+	{
+		$('#'+str1).append('???');
+	}
+	else
+	{
+		$('#'+str1).append(str2);
+	}
+	if(str1.endsWith('HIT') || str1.endsWith('CRT') || str1.endsWith('DOD'))
+	{
+		$('#'+str1).append(' %');
+	}
+}
+
 
 
 
