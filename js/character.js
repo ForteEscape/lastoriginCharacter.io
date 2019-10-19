@@ -63,3 +63,40 @@ function drawCharacterPage(stat, desc)
 	$('.skill-container:first').remove();
 	&('.skill-container:first').addClass('skill-container-active');
 }
+
+function drawSkillInfo(idx, LVL, power, desc)
+{
+	$('.skill-name:last').html("<h5> LV. "+LVL+"</h5> <h3>"+desc.name+"</h3>");
+	$('.skill-range:last').html("사정거리 "+desc.range);
+	if(typeof desc.areadata != "undefined")
+	{
+		drawSkillArea($('.skill-area:last'), desc.areadata);
+	}
+	else
+	{
+		drawSkillArea($('.skill-area:last'), [5]);
+	}
+	
+	$('.skill-description:last').html('<p>'+desc.description+'</p>');
+	$('#'+desc.title.substr(0,6)+'power'+desc.title.substr(6)).html(power);
+	
+	$('.active:last').removeClass("active");
+	$('.skill-container:eq('+(idx+1)').btn:eq('+idx+')').addClass("active");
+	if(desc.type == "active")
+	{
+		$('.skill-nav-wrap:last').css("border-bottom", "5px solid orange");
+	}
+	else if(desc.type == "passive")
+	{
+		$('.skill-nav-wrap:last').css("border-bottom", "5px solid skyblue");
+	}
+}
+
+
+
+
+
+
+
+
+
