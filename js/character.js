@@ -1,8 +1,8 @@
 window.onload = async function(){
-	var characterNum = getURLParameter('characterNum');
+	var characterName = getURLParameter('characterName');
 	
-	var characterStatData;
-	var characterDescData = await loadCharacterData(characterStatData.name);
+	var characterStatData = await loadCharacterStatData(characterName);
+	var characterDescData = await loadCharacterSkillData(characterName);
 	
 	drawCharacterPage(characterStatData, characterDescData);
 	
@@ -22,7 +22,7 @@ function drawCharacterPage(stat, desc)
 	}
 	document.title = characterName+'정보';
 	
-	$('#name').append(enemyName);
+	$('#name').append(characterName);
 	$('.image').append("<img src=\"img/Profile/"+desc.img+".png" style=\"width 100%\" />");
 	writeData('LVL', stat.LVL);
 	writeData('HP', stat.HP);

@@ -13,12 +13,12 @@ function loadData(src)
 }
 
 // 캐릭터 desc 로드 함수
-async function loadCharacterData(characterName)
+async function loadCharacterSkillData(characterName)
 {
 	return new Promise(resolve=>{
 		var src = "./data/characterSkill.js";
 		loadData(src).then(()=>{
-			var characterData = characterDataArr.filter(data=>data.name==characterName)[0];
+			var characterData = characterSkillDataArr.filter(data=>data.name==characterName)[0];
 			resolve(characterData);
 		});
 	});
@@ -29,7 +29,10 @@ async function loadCharacterStatData(characterName)
 {
 	return new Promise((resolve, reject)=> {
 		var src = "./data/characterStat.js";
-		loadData(src).then(()=>resolve(characterStatData), ()=>reject());
+		loadData(src).then(()=> {
+			var characterStatData = characterStatDataArr.filter(data=>data.name == characterName)[0];
+			resolve(characterStatData);
+		})
 	});
 }
 

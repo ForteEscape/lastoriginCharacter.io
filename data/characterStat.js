@@ -1,7 +1,7 @@
-var characterDataArr=[
+var characterStatDataArr=[
 	{
 		"type":"lightType",
-		"name":"T-14 λ―ΈνΈ",
+		"name":"미호",
 		"role":"Dealer",
 		"rank":"A",
 		"LVL":1,
@@ -23,7 +23,9 @@ var characterDataArr=[
 			1
 		],
 		"skillpower":[
-			
+			1,
+			1,
+			1
 		]
 	},
 	{
