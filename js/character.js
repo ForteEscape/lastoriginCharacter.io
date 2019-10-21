@@ -1,5 +1,5 @@
 window.onload = async function(){
-	var characterName = getURLParameter('characterName');
+	var characterName = getURLParameter('character');
 	
 	var characterStatData = await loadCharacterStatData(characterName);
 	var characterDescData = await loadCharacterSkillData(characterName);
