@@ -1,6 +1,7 @@
 var characterSkillDataArr=[
 	{
-		"name" : "미호",
+		"name" : "miho",
+		"img": "Miho",
 		"skills":[
 			{
 				"title": "askill1",
@@ -31,7 +32,7 @@ var characterSkillDataArr=[
 				"solveDOD": "0",
 				"description": "전투 개시 시, 자기 앞에 있는 보호기의 AP를 <span id='mihoaskillpower3'></span> 만큼 증가시키고 대상의 공격지원을 합니다.",
 				"areadata": [5]
-			},
+			}
 		]
 		//skill descript
 	}

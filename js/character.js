@@ -1,10 +1,12 @@
 window.onload = async function(){
-	var characterName = getURLParameter('character');
+	var characterNum = getURLParameter('character');
 	
-	var characterStatData = await loadCharacterStatData(characterName);
-	var characterDescData = await loadCharacterSkillData(characterName);
+	var loadCharacterData = await loadCharacterStatData(characterName);
+	var characterStat = loadCharacterData.characterStatDataArr[characterNum];
 	
-	drawCharacterPage(characterStatData, characterDescData);
+	var characterDescData = await loadCharacterSkillData(characterStat.name);
+	
+	drawCharacterPage(characterStat, characterDescData);
 	
 	$('.skill-nav').on('click', '.btn', function(e){
 		changeSkill(e.currentTarget.hash.slice(6));
