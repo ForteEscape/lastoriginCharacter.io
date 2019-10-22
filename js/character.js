@@ -1,7 +1,7 @@
 window.onload = async function(){
-	var characterNum = getURLParameter('character');
+	var characterID = getURLParameter('character');
 	
-	var characterStatData = await loadCharacterStatData(characterNum);
+	var characterStatData = await loadCharacterStatData(characterID);
 	
 	var characterDescData = await loadCharacterSkillData(characterStatData.name);
 	
@@ -24,7 +24,7 @@ function drawCharacterPage(stat, desc)
 	document.title = characterName+'정보';
 	
 	$('#name').append(characterName);
-	$('.image').append("<img src=\"img/Profile/"+desc.img+".png" style=\"width 100%\" />");
+	$('.image').append("<img src=\"img/Profile/"+desc.img+".png\" style=\"width 100%\" />");
 	writeData('LVL', stat.LVL);
 	writeData('HP', stat.HP);
 	writeData('ATK', stat.ATK);
@@ -62,7 +62,7 @@ function drawCharacterPage(stat, desc)
 		}
 	}
 	$('.skill-container:first').remove();
-	&('.skill-container:first').addClass('skill-container-active');
+	$('.skill-container:first').addClass('skill-container-active');
 }
 
 function drawSkillInfo(idx, LVL, power, desc)
@@ -82,7 +82,7 @@ function drawSkillInfo(idx, LVL, power, desc)
 	$('#'+desc.title.substr(0,6)+'power'+desc.title.substr(6)).html(power);
 	
 	$('.active:last').removeClass("active");
-	$('.skill-container:eq('+(idx+1)').btn:eq('+idx+')').addClass("active");
+	$('.skill-container:eq('+(idx+1)+') .btn:eq('+idx+')').addClass("active");
 	if(desc.type == "active")
 	{
 		$('.skill-nav-wrap:last').css("border-bottom", "5px solid orange");

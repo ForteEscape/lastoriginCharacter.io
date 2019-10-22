@@ -1,7 +1,7 @@
 var characterStatDataArr=[
 	{
 		"name":"miho",
-		"type": "light"
+		"type": "light",
 		"role":"Dealer",
 		"rank":"A",
 		"LVL":1,
@@ -12,11 +12,6 @@ var characterStatDataArr=[
 		"CRT":5,
 		"HIT":159,
 		"DOD":10,
-		"cost":[
-			"parts":10,
-			"nutrition":16,
-			"electric":10
-		],
 		"skillLVL":[
 			1,
 			1,

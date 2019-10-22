@@ -6,7 +6,7 @@ var characterSkillDataArr=[
 			{
 				"title": "askill1",
 				"type": "active",
-				"name": "바보 아냐?"
+				"name": "바보 아냐?",
 				"img": "Shot",
 				"range": "4",
 				"solveDOD": "6",
@@ -16,7 +16,7 @@ var characterSkillDataArr=[
 			{
 				"title": "askill2",
 				"type": "active",
-				"name": "마무리 저격"
+				"name": "마무리 저격",
 				"img": "Shot",
 				"range": "4",
 				"solveDOD": "7",
@@ -26,7 +26,7 @@ var characterSkillDataArr=[
 			{
 				"title": "pskill1",
 				"type": "passive",
-				"name": "전위 지원"
+				"name": "전위 지원",
 				"img": "SelfAtkBuff",
 				"range": "0",
 				"solveDOD": "0",
