@@ -1,10 +1,7 @@
 window.onload = async function(){
 	var characterNum = getURLParameter('character');
-	var characterType = getURLParameter('type');
 	
-	var loadCharacterData = await loadCharacterStatData(characterNum);
-	var characterStat = loadCharacterData.characterStatData;
-	var characterStatData = characterStat.lighttype[characterNum];
+	var characterStatData = await loadCharacterStatData(characterNum);
 	
 	var characterDescData = await loadCharacterSkillData(characterStatData.name);
 	

@@ -25,12 +25,12 @@ async function loadCharacterSkillData(characterName)
 }
 
 //캐릭터 stat 로드 함수
-async function loadCharacterStatData(characterName)
+async function loadCharacterStatData(characterNum)
 {
 	return new Promise((resolve, reject)=> {
 		var src = "./data/characterStat.js";
 		loadData(src).then(()=> {
-			var characterStatData = characterStatDataArr.filter(data=>data.name == characterName)[0];
+			var characterStatData = characterStatDataArr[characterNum];
 			resolve(characterStatData);
 		})
 	});
