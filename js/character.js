@@ -46,7 +46,7 @@ function drawCharacterPage(stat, desc)
 			}
 			else if(desc.skills[i].type == "passive"){
 				$('.btn:last').addClass("skill-passive");
-				$('.skill-icon:last').attr("src", "img/Skillicon/"+desc.skills[i].img+"_passive.img");
+				$('.skill-icon:last').attr("src", "img/Skillicon/"+desc.skills[i].img+"_passive.png");
 			}
 		}
 	}
@@ -95,14 +95,14 @@ function drawSkillInfo(idx, LVL, power, desc)
 
 function drawSkillArea(json, data)
 {
-	if(data.some(el=>{return isNAN(el);}))
+	if(data.some(el=> {return isNaN(el);}))
 	{
 		for(var i = 0; i<9; i++)
 		{
 			var color = data[i];
 			
-			var row = 3-parseINT((i)/3);
-			var colum = i+1-parseINT((i)/3)*3;
+			var row = 3-parseInt((i)/3);
+			var colum = i+1-parseInt((i)/3)*3;
 			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
 		}
 	}
@@ -114,8 +114,8 @@ function drawSkillArea(json, data)
 			
 			if(data[i] == 0){ color = "rgb(45, 45, 45)"; }
 			
-			var row = 3-parseINT((i)/3);
-			var colum = i+1-parseINT((i)/3)*3;
+			var row = 3-parseInt((i)/3);
+			var colum = i+1-parseInt((i)/3)*3;
 			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
 		}
 	}
@@ -126,8 +126,8 @@ function drawSkillArea(json, data)
 			if(data.indexOf(i+1) != -1){ var color = "rgb(255, 213, 0)";}
 			else{ var color = "rgb(50, 50, 50)";}
 			
-			var row = 3-parseINT((i)/3);
-			var colum = i+1-parseINT((i)/3)*3;
+			var row = 3-parseInt((i)/3);
+			var colum = i+1-parseInt((i)/3)*3;
 			json.children().children().children(":nth-child("+row+")").children(":nth-child("+colum+")").css({"background-color": color});
 		}
 	}
