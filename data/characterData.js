@@ -1,5 +1,6 @@
 var characterStatDataArr=[
 	{
+		"id": "miho",
 		"name":"miho",
 		"type": "light",
 		"role":"Dealer",
