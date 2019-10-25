@@ -15,6 +15,8 @@
 		<title>장비 도감</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="./js/equipmentDB.js"></script>
 		
 		<!-- grid init -->
 		<style>
@@ -58,25 +60,25 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">칩
+							<input type="checkbox" class="form-check-input" id="chk_chip" value="Chip">칩
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">OS
+							<input type="checkbox" class="form-check-input" id="chk_os" value="OS">OS
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">장비
+							<input type="checkbox" class="form-check-input" id="chk_equ" value="Equipment">장비
 						</label>
 					</div>
 					
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">전용장비
+							<input type="checkbox" class="form-check-input" id="chk_dequ" value="DesignatedEquipment">전용장비
 						</label>
 					</div>
 				</div>
@@ -84,25 +86,25 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">B랭크
+							<input type="checkbox" class="form-check-input" value="B">B랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">A랭크
+							<input type="checkbox" class="form-check-input" value="A">A랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">S랭크
+							<input type="checkbox" class="form-check-input" value="S">S랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">SS랭크
+							<input type="checkbox" class="form-check-input" value="SS">SS랭크
 						</label>
 					</div>
 				</div>
@@ -110,8 +112,17 @@
 		</main>
 		
 		<div class="wrapper">
-			<div>
+			<div class="equipment SS">
 				<a class="name" href="equipment.html?equipment=vento" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/equip/vento.png"><p>소완제 수제 도시락</p></a>
+			</div>
+			<div class="equipment SS">
+				<a class="name" href="equipment.html?equipment=scope_SS" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/equip/scope_SS.png"><p>초정밀 조준기 EX</p></a>
+			</div>
+			<div class="os SS">
+				<a class="name" href="equipment.html?equipment=counter_SS" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/equip/counter_SS.png"><p>대응형 전투 시스템 EX</p></a>
+			</div>
+			<div class="chip SS">
+				<a class="name" href="equipment.html?equipment=realese_SS" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/equip/realese_SS.png"><p>백신 처리 EX</p></a>
 			</div>
 			
 		</div><br>
