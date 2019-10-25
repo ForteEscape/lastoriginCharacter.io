@@ -3,7 +3,7 @@ window.onload = async function(){
 	
 	var characterStatData = await loadCharacterStatData(characterID);
 	
-	var characterDescData = await loadCharacterSkillData(characterStatData.name);
+	var characterDescData = await loadCharacterSkillData(characterStatData.id);
 	
 	drawCharacterPage(characterStatData, characterDescData);
 	

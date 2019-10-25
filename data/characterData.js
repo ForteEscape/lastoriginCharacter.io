@@ -1,7 +1,7 @@
 var characterStatDataArr=[
 	{
 		"id": "miho",
-		"name":"miho",
+		"name":"T-14 미호",
 		"type": "light",
 		"role":"Dealer",
 		"rank":"A",
