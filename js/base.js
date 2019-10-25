@@ -41,7 +41,7 @@ async function loadEquipmentStatData(equipmentName)
 	return new Promise((resolve, reject)=> {
 		var src = "./data/equipmentData.js";
 		loadData(src).then(()=> {
-			var equipmentStatData = equipmentStatDataArr.filter(data=>data.name == equipmentName)[0];
+			var equipmentStatData = equipmentStatDataArr.filter(data=>data.id == equipmentName)[0];
 			resolve(equipmentStatData);
 		})
 	});

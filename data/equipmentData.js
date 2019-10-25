@@ -1,6 +1,7 @@
 var equipmentStatDataArr=[
 	{
-		"name": "vento",
+		"id": "vento",
+		"name": "소완제 수제 도시락",
 		"rank": "SS",
 		"img": "vento",
 		"LVL": 1,
