@@ -33,6 +33,9 @@
 				text-align: center;
 			}
 			
+			.selected{
+				visibility: hidden;
+			}
 		</style>
 		
 	</head>
@@ -60,25 +63,25 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" id="chk_chip" value="Chip">칩
+							<input type="checkbox" id="chk_chip" onclick = "searchByEquipmentType(chk_chip)">칩
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" id="chk_os" value="OS">OS
+							<input type="checkbox" id="chk_os" onclick = "searchByEquipmentType(chk_os)">OS
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" id="chk_equ" value="Equipment">장비
+							<input type="checkbox" id="chk_equ" onclick = "searchByEquipmentType(chk_equ)">장비
 						</label>
 					</div>
 					
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" id="chk_dequ" value="DesignatedEquipment">전용장비
+							<input type="checkbox" id="chk_dequ" onclick = "searchByEquipmentType(chk_dequ)">전용장비
 						</label>
 					</div>
 				</div>
@@ -86,25 +89,25 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="B">B랭크
+							<input type="checkbox" class="form-check-input" onclick = "searchByEquipmentRank(B)">B랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="A">A랭크
+							<input type="checkbox" class="form-check-input" onclick = "searchByEquipmentRank(A)">A랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="S">S랭크
+							<input type="checkbox" class="form-check-input" onclick = "searchByEquipmentRank(S)">S랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="SS">SS랭크
+							<input type="checkbox" class="form-check-input" onclick = "searchByEquipmentRank(SS)">SS랭크
 						</label>
 					</div>
 				</div>

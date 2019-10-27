@@ -1,125 +1,87 @@
-function searchEquipmentType()
-{
-	var ischeckedChip = -1;
-	var ischeckedOS = -1;
-	var ischeckedEquipment = -1;
-	var ischeckedDesignatedEquipment = -1;
-	
-	//입력 판별 - 체크되었을시
-	if($('input:checkbox[id="chk_chip"]').is("checked"))
-	{
-		ischeckedChip = $('input:checkbox[id="chk_chip"]').val();
+function searchByEquipmentType(type_equipment)
+{	
+	if(type_equipment == chk_chip){
+		var $target = $('.chip');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
 	}
-	if($('input:checkbox[id="chk_os"]').is("checked"))
-	{
-		ischeckedOS = $('input:checkbox[id="chk_os"]').val();
+	else if(type_equipment == chk_os){
+		var $target = $('.os');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
 	}
-	if($('input:checkbox[id="chk_equ"]').is("checked"))
-	{
-		ischeckedEquipment = $('input:checkbox[id="chk_equ"]').val();
+	else if(type_equipment == chk_equ){
+		var $target = $('.equipment');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
 	}
-	if($('input:checkbox[id="chk_dequ"]').is("checked"))
-	{
-		ischeckedDesignatedEquipment = $('input:checkbox[id="chk_dequ"]').val();
+	else if(type_equipment == chk_dequ){
+		var $target = $('.designate');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
 	}
-	
-	//입력 판별 - 체크가 안되있을시
-	if($('input:checkbox[id="chk_chip"]').is("checked") == false)
-	{
-		ischeckedChip = -1;
-	}
-	if($('input:checkbox[id="chk_os"]').is("checked") == false)
-	{
-		ischeckedOS = -1;
-	}
-	if($('input:checkbox[id="chk_equ"]').is("checked") == false)
-	{
-		ischeckedEquipment = -1;
-	}
-	if($('input:checkbox[id="chk_dequ"]').is("checked") == false)
-	{
-		ischeckedDesignatedEquipment = -1;
-	}
-	
-	// 동작부 - checked
-	if(ischeckedChip != -1)
-	{
-		$(".os").hide();
-		$(".equipment").hide();
-		$(".designatedequipment").hide();
-	}
-	else if(ischeckedOS != -1)
-	{
-		$(".chip").hide();
-		$(".equipment").hide();
-		$(".designatedequipment").hide();	
-	}
-	else if(ischeckedEquipment != -1)
-	{
-		$(".os").hide();
-		$(".chip").hide();
-		$(".designatedequipment").hide();	
-	}
-	else if(ischeckedDesignatedEquipment != -1)
-	{
-		$(".chip").hide();
-		$(".equipment").hide();
-		$(".o").hide();	
-	}
-	
-	if(ischeckedChip != -1 && ischeckedOS != -1)
-	{
-		$(".equipment").hide();
-		$(".designatedequipment").hide();
-	}
-	if(ischeckedChip != -1 && ischeckedEquipment != -1)
-	{
-		$(".os").hide();
-		$(".designatedequipment").hide();
-	}
-	if(ischeckedChip != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".os").hide();
-		$(".equipment").hide();
-	}
-	if(ischeckedOS != -1 && ischeckedEquipment != -1)
-	{
-		$(".chip").hide();
-		$(".designatedequipment").hide();
-	}
-	if(ischeckedOS != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".chip").hide();
-		$(".equipment").hide();
-	}
-	if(ischeckedEquipment != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".chip").hide();
-		$(".os").hide();
-	}
-	if(ischeckedChip != -1 && ischeckedOS != -1 && ischeckedEquipment != -1)
-	{
-		$(".designatedequipment").hide();
-	}
-	if(ischeckedChip != -1 && ischeckedOS != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".equipment").hide();
-	}
-	if(ischeckedChip != -1 && ischeckedEquipment != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".os").hide();
-	}
-	if(ischeckedOS != -1 && ischeckedEquipment != -1 && ischeckedDesignatedEquipment != -1)
-	{
-		$(".chip").hide();
-	}
-	
 }
 
-function searchEquipmentRank()
+function searchByEquipmentRank(rank_equipment)
 {
-	var ischeckedRankB = -1;
-	var ischeckedRankA = -1;
-	var ischeckedRankS = -1;
-	var ischeckedRankSS = -1;
+	if(rank_equipment == SS){
+		var $target = $('.SS');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
+	}
+	else if(rank_equipment == S){
+		var $target = $('.S');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
+	}
+	else if(rank_equipment == A){
+		var $target = $('.A');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
+	}
+	else if(rank_equipment == B){
+		var $target = $('.B');
+		
+		if($target.css("display") == "none"){
+			$target.show();
+		}
+		else{
+			$target.hide();
+		}
+	}
 }
