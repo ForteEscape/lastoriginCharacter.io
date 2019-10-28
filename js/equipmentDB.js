@@ -120,7 +120,7 @@ function searchByEquipmentType(type_equipment)
 			}
 		}
 	}
-	else if(type_equipment == chk_equipment){
+	else if(type_equipment == chk_equ){
 		equipment_cnt++;
 		
 		if((equipment_cnt%2) != 0){
