@@ -8,45 +8,37 @@ var ischecked_A = false;
 var ischecked_S = false;
 var ischecked_SS = false;
 	
-var chip_cnt = 0;
-var os_cnt = 0;
-var equipment_cnt = 0;
-var designate_cnt = 0;
-	
-//분기문에서 사용될 변수들
-var $chip = $('.chip');
-var $chip_B = $('.chip.B');
-var $chip_A = $('.chip.A');
-var $chip_S = $('.chip.S');
-var $chip_SS = $('.chip.SS');
-	
-var $equipment = $('.equipment');
-var $equipment_B = $('.equipment.B');
-var $equipment_A = $('.equipment.A');
-var $equipment_S = $('.equipment.S');
-var $equipment_SS = $('.equipment.SS');
-	
-var $os = $('.os');
-var $os_B = $('.os.B');
-var $os_A = $('.os.A');
-var $os_S = $('.os.S');
-var $os_SS = $('.os.SS');
-	
-var $designate = $('.designate');
-var $designate_B = $('.designate.B');
-var $designate_A = $('.designate.A');
-var $designate_S = $('.designate.S');
-var $designate_SS = $('.designate.SS');
-
 function searchByEquipmentType(type_equipment)
 {	
+	var $chip = $('.chip');
+	var $chip_B = $('.chip.B');
+	var $chip_A = $('.chip.A');
+	var $chip_S = $('.chip.S');
+	var $chip_SS = $('.chip.SS');
+	
+	var $equipment = $('.equipment');
+	var $equipment_B = $('.equipment.B');
+	var $equipment_A = $('.equipment.A');
+	var $equipment_S = $('.equipment.S');
+	var $equipment_SS = $('.equipment.SS');
+	
+	var $os = $('.os');
+	var $os_B = $('.os.B');
+	var $os_A = $('.os.A');
+	var $os_S = $('.os.S');
+	var $os_SS = $('.os.SS');
+	
+	var $designate = $('.designate');
+	var $designate_B = $('.designate.B');
+	var $designate_A = $('.designate.A');
+	var $designate_S = $('.designate.S');
+	var $designate_SS = $('.designate.SS');
+	
 	if(type_equipment == chk_chip){
-		chip_cnt++;
-		
-		if((chip_cnt%2) != 0){
+		if(ischecked_chip == false){
 			ischecked_chip = true;
 		}
-		else{
+		else if(ischecked_chip == true){
 			ischecked_chip = false;
 		}
 		
@@ -60,13 +52,13 @@ function searchByEquipmentType(type_equipment)
 				if(ischecked_B == true){
 					$chip_B.show();
 				}
-				else if(ischecked_A == true){
+				if(ischecked_A == true){
 					$chip_A.show();
 				}
-				else if(ischecked_S == true){
+				if(ischecked_S == true){
 					$chip_S.show();
 				}
-				else if(ischecked_SS == true){
+				if(ischecked_SS == true){
 					$chip_SS.show();
 				}
 				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
@@ -78,15 +70,35 @@ function searchByEquipmentType(type_equipment)
 			if(ischecked_os == true || ischecked_equipment == true || ischecked_designate == true){
 				$chip.hide();
 			}
+			
+			if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+					$chip.show();
+					$os.show();
+					$equipment.show();
+					$designate.show();
+				}
+				if(ischecked_B == true){
+					searchByEquipmentRank(B);
+				}
+				if(ischecked_A == true){
+					searchByEquipmentRank(A);
+				}
+				if(ischecked_S == true){
+					searchByEquipmentRank(S);
+				}
+				if(ischecked_SS == true){
+					searchByEquipmentRank(SS);
+				}
+			}
 		}
+		
 	}
 	else if(type_equipment == chk_os){
-		os_cnt++;
-		
-		if((os_cnt%2) != 0){
+		if(ischecked_os == false){
 			ischecked_os = true;
 		}
-		else{
+		else if(ischecked_os == true){
 			ischecked_os = false;
 		}
 		
@@ -118,15 +130,34 @@ function searchByEquipmentType(type_equipment)
 			if(ischecked_chip == true || ischecked_equipment == true || ischecked_designate == true){
 				$os.hide();
 			}
+			
+			if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+					$chip.show();
+					$os.show();
+					$equipment.show();
+					$designate.show();
+				}
+				if(ischecked_B == true){
+					searchByEquipmentRank(B);
+				}
+				if(ischecked_A == true){
+					searchByEquipmentRank(A);
+				}
+				if(ischecked_S == true){
+					searchByEquipmentRank(S);
+				}
+				if(ischecked_SS == true){
+					searchByEquipmentRank(SS);
+				}
+			}
 		}
 	}
 	else if(type_equipment == chk_equ){
-		equipment_cnt++;
-		
-		if((equipment_cnt%2) != 0){
+		if(ischecked_equipment == false){
 			ischecked_equipment = true;
 		}
-		else{
+		else if(ischecked_equipment == true){
 			ischecked_equipment = false;
 		}
 		
@@ -155,152 +186,354 @@ function searchByEquipmentType(type_equipment)
 			}
 		}
 		else if(ischecked_equipment == false){
-			if(ischecked_os == true || ischecked_chip == true || ischecked_designate == true){
+			if(ischecked_chip == true || ischecked_os == true || ischecked_designate == true){
 				$equipment.hide();
+			}
+			
+			if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+					$chip.show();
+					$os.show();
+					$equipment.show();
+					$designate.show();
+				}
+				if(ischecked_B == true){
+					searchByEquipmentRank(B);
+				}
+				if(ischecked_A == true){
+					searchByEquipmentRank(A);
+				}
+				if(ischecked_S == true){
+					searchByEquipmentRank(S);
+				}
+				if(ischecked_SS == true){
+					searchByEquipmentRank(SS);
+				}
 			}
 		}
 	}
+	else if(type_equipment == chk_dequ){
+		if(ischecked_designate == false){
+			ischecked_designate = true;
+		}
+		else if(ischecked_designate == true){
+			ischecked_designate = false;
+		}
 		
-	
-	if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
-		if(ischecked_B == true){
-			$chip_B.show();
-			$os_B.show();
-			$equipment_B.show();
-			$designate_B.show();
+		if(ischecked_designate == true){
+			if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false){
+				$chip.hide();
+				$os.hide();
+				$equipment.hide();
+			}
+			else{
+				if(ischecked_B == true){
+					$designate_B.show();
+				}
+				if(ischecked_A == true){
+					$designate_A.show();
+				}
+				if(ischecked_S == true){
+					$designate_S.show();
+				}
+				if(ischecked_SS == true){
+					$designate_SS.show();
+				}
+				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+					$designate.show();
+				}
+			}
 		}
-		if(ischecked_A == true){
-			$chip_A.show();
-			$os_A.show();
-			$equipment_A.show();
-			$designate_A.show();
+		else if(ischecked_designate == false){
+			if(ischecked_chip == true || ischecked_os == true || ischecked_equipment == true){
+				$designate.hide();
+			}
+			
+			if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+				if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+					$chip.show();
+					$os.show();
+					$equipment.show();
+					$designate.show();
+				}
+				if(ischecked_B == true){
+					searchByEquipmentRank(B);
+				}
+				if(ischecked_A == true){
+					searchByEquipmentRank(A);
+				}
+				if(ischecked_S == true){
+					searchByEquipmentRank(S);
+				}
+				if(ischecked_SS == true){
+					searchByEquipmentRank(SS);
+				}
+			}
 		}
-		if(ischecked_S == true){
-			$chip_S.show();
-			$os_S.show();
-			$equipment_S.show();
-			$designate_S.show();
-		}
-		if(ischecked_SS == true){
-			$chip_SS.show();
-			$os_SS.show();
-			$equipment_SS.show();
-			$designate_SS.show();
-		}
-		if(ischecked_A == false && ischecked_B == false && ischecked_S == false && ischecked_SS == false){
-			$chip.show();
-			$os.show();
-			$equipment.show();
-			$designate.show();
-		}
-	}
-	
+	}	
 }
 
-/*function searchByEquipmentRank(rank_equipment)
+function searchByEquipmentRank(rank_equipment)
 {
-	if(rank_equipment == SS){
-		var $target1 = $('.B');
-		var $target2 = $('.A');
-		var $target3 = $('.S');
-		
-		if($target1.css("display") == "none"){
-			$target1.show();
+	var $rank_B = $('.B');
+	var $rank_A = $('.A');
+	var $rank_S = $('.S');
+	var $rank_SS = $('.SS');
+
+	var $chip_B = $('.chip.B');
+	var $chip_A = $('.chip.A');
+	var $chip_S = $('.chip.S');
+	var $chip_SS = $('.chip.SS');
+	
+	var $equipment_B = $('.equipment.B');
+	var $equipment_A = $('.equipment.A');
+	var $equipment_S = $('.equipment.S');
+	var $equipment_SS = $('.equipment.SS');
+	
+	var $os_B = $('.os.B');
+	var $os_A = $('.os.A');
+	var $os_S = $('.os.S');
+	var $os_SS = $('.os.SS');
+	
+	var $designate_B = $('.designate.B');
+	var $designate_A = $('.designate.A');
+	var $designate_S = $('.designate.S');
+	var $designate_SS = $('.designate.SS');
+	
+	if(rank_equipment == B){
+		if(ischecked_B == false){
+			ischecked_B = true;
 		}
-		else{
-			$target1.hide();
-		}
-		
-		if($target2.css("display") == "none"){
-			$target2.show();
-		}
-		else{
-			$target2.hide();
-		}
-		
-		if($target3.css("display") == "none"){
-			$target3.show();
-		}
-		else{
-			$target3.hide();
-		}
-	}
-	else if(rank_equipment == S){
-		var $target1 = $('.B');
-		var $target2 = $('.A');
-		var $target3 = $('.SS');
-		
-		if($target1.css("display") == "none"){
-			$target1.show();
-		}
-		else{
-			$target1.hide();
+		else if(ischecked_B == true){
+			ischecked_B = false;
 		}
 		
-		if($target2.css("display") == "none"){
-			$target2.show();
+		if(ischecked_B == true){
+			if(ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+				$rank_SS.hide();
+				$rank_S.hide();
+				$rank_A.hide();
+			}
+			else{
+				if(ischecked_chip == true){
+					$chip_B.show();
+				}
+				if(ischecked_os == true){
+					$os_B.show();
+				}
+				if(ischecked_equipment == true){
+					$equipment_B.show();
+				}
+				if(ischecked_designate == true){
+					$designate_B.show();
+				}
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_B.show();
+				}
+			}
 		}
-		else{
-			$target2.hide();
-		}
-		
-		if($target3.css("display") == "none"){
-			$target3.show();
-		}
-		else{
-			$target3.hide();
+		else if(ischecked_B == false){
+			if(ischecked_A == true || ischecked_S == true || ischecked_SS == true){
+				ischecked_B.hide();
+			}
+			
+			if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_B.show();
+					$rank_A.show();
+					$rank_S.show();
+					$rank_SS.show();
+				}
+				if(ischecked_chip == true){
+					searchByEquipmentType(chk_chip);
+				}
+				if(ischecked_os == true){
+					searchByEquipmentType(chk_os);
+				}
+				if(ischecked_equipment == true){
+					searchByEquipmentType(chk_equ);
+				}
+				if(ischecked_designate == true){
+					searchByEquipmentType(chk_dequ);
+				}
+			}
 		}
 	}
 	else if(rank_equipment == A){
-		var $target1 = $('.B');
-		var $target2 = $('.SS');
-		var $target3 = $('.S');
-		
-		if($target1.css("display") == "none"){
-			$target1.show();
+		if(ischecked_A == false){
+			ischecked_A = true;
 		}
-		else{
-			$target1.hide();
+		else if(ischecked_A == true){
+			ischecked_A = false;
 		}
 		
-		if($target2.css("display") == "none"){
-			$target2.show();
+		if(ischecked_A == true){
+			if(ischecked_B == false && ischecked_S == false && ischecked_SS == false){
+				$rank_SS.hide();
+				$rank_S.hide();
+				$rank_B.hide();
+			}
+			else{
+				if(ischecked_chip == true){
+					$chip_A.show();
+				}
+				if(ischecked_os == true){
+					$os_A.show();
+				}
+				if(ischecked_equipment == true){
+					$equipment_A.show();
+				}
+				if(ischecked_designate == true){
+					$designate_A.show();
+				}
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_A.show();
+				}
+			}
 		}
-		else{
-			$target2.hide();
-		}
-		
-		if($target3.css("display") == "none"){
-			$target3.show();
-		}
-		else{
-			$target3.hide();
+		else if(ischecked_A == false){
+			if(ischecked_B == true || ischecked_S == true || ischecked_SS == true){
+				ischecked_A.hide();
+			}
+			
+			if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_B.show();
+					$rank_A.show();
+					$rank_S.show();
+					$rank_SS.show();
+				}
+				if(ischecked_chip == true){
+					searchByEquipmentType(chk_chip);
+				}
+				if(ischecked_os == true){
+					searchByEquipmentType(chk_os);
+				}
+				if(ischecked_equipment == true){
+					searchByEquipmentType(chk_equ);
+				}
+				if(ischecked_designate == true){
+					searchByEquipmentType(chk_dequ);
+				}
+			}
 		}
 	}
-	else if(rank_equipment == B){
-		var $target1 = $('.SS');
-		var $target2 = $('.A');
-		var $target3 = $('.S');
-		
-		if($target1.css("display") == "none"){
-			$target1.show();
+	else if(rank_equipment == S){
+		if(ischecked_S == false){
+			ischecked_S = true;
 		}
-		else{
-			$target1.hide();
+		else if(ischecked_S == true){
+			ischecked_S = false;
 		}
 		
-		if($target2.css("display") == "none"){
-			$target2.show();
+		if(ischecked_S == true){
+			if(ischecked_B == false && ischecked_A == false && ischecked_SS == false){
+				$rank_SS.hide();
+				$rank_A.hide();
+				$rank_B.hide();
+			}
+			else{
+				if(ischecked_chip == true){
+					$chip_S.show();
+				}
+				if(ischecked_os == true){
+					$os_S.show();
+				}
+				if(ischecked_equipment == true){
+					$equipment_S.show();
+				}
+				if(ischecked_designate == true){
+					$designate_S.show();
+				}
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_S.show();
+				}
+			}
 		}
-		else{
-			$target2.hide();
-		}
-		
-		if($target3.css("display") == "none"){
-			$target3.show();
-		}
-		else{
-			$target3.hide();
+		else if(ischecked_S == false){
+			if(ischecked_B == true || ischecked_A == true || ischecked_SS == true){
+				ischecked_S.hide();
+			}
+			
+			if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_B.show();
+					$rank_A.show();
+					$rank_S.show();
+					$rank_SS.show();
+				}
+				if(ischecked_chip == true){
+					searchByEquipmentType(chk_chip);
+				}
+				if(ischecked_os == true){
+					searchByEquipmentType(chk_os);
+				}
+				if(ischecked_equipment == true){
+					searchByEquipmentType(chk_equ);
+				}
+				if(ischecked_designate == true){
+					searchByEquipmentType(chk_dequ);
+				}
+			}
 		}
 	}
-}*/
+	else if(rank_equipment == SS){
+		if(ischecked_SS == false){
+			ischecked_SS = true;
+		}
+		else if(ischecked_SS == true){
+			ischecked_SS = false;
+		}
+		
+		if(ischecked_SS == true){
+			if(ischecked_B == false && ischecked_S == false && ischecked_A == false){
+				$rank_A.hide();
+				$rank_S.hide();
+				$rank_B.hide();
+			}
+			else{
+				if(ischecked_chip == true){
+					$chip_SS.show();
+				}
+				if(ischecked_os == true){
+					$os_SS.show();
+				}
+				if(ischecked_equipment == true){
+					$equipment_SS.show();
+				}
+				if(ischecked_designate == true){
+					$designate_SS.show();
+				}
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_SS.show();
+				}
+			}
+		}
+		else if(ischecked_SS == false){
+			if(ischecked_B == true || ischecked_S == true || ischecked_A == true){
+				ischecked_SS.hide();
+			}
+			
+			if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+				if(ischecked_chip == false && ischecked_os == false && ischecked_equipment == false && ischecked_designate == false){
+					$rank_B.show();
+					$rank_A.show();
+					$rank_S.show();
+					$rank_SS.show();
+				}
+				if(ischecked_chip == true){
+					searchByEquipmentType(chk_chip);
+				}
+				if(ischecked_os == true){
+					searchByEquipmentType(chk_os);
+				}
+				if(ischecked_equipment == true){
+					searchByEquipmentType(chk_equ);
+				}
+				if(ischecked_designate == true){
+					searchByEquipmentType(chk_dequ);
+				}
+			}
+		}
+	}
+}
