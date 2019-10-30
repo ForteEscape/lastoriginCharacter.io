@@ -59,13 +59,13 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">중상
+							<input type="checkbox" id="injured" class="form-check-input" onclick = "searchByCharacterSkin(injured)">중상
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">Live2D
+							<input type="checkbox" id="live2D" class="form-check-input" onclick = "searchByCharacterSkin(live2D)">Live2D
 						</label>
 					</div>
 				</div>
@@ -73,25 +73,13 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">B랭크
+							<input type="checkbox" id="bioroid" class="form-check-input" onclick = "searchByCharacterbrood(bioroid)">바이오로이드
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">A랭크
-						</label>
-					</div>
-				
-					<div class="form-check-inline">
-						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">S랭크
-						</label>
-					</div>
-				
-					<div class="form-check-inline">
-						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">SS랭크
+							<input type="checkbox" id="ags" class="form-check-input" onclick = "searchByCharacterbrood(ags)">AGS
 						</label>
 					</div>
 				</div>
@@ -99,25 +87,25 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">경장형
+							<input type="checkbox" id="B" class="form-check-input" onclick = "searchByCharacterRank(B)">B랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">기동형
+							<input type="checkbox" id="A" class="form-check-input" onclick = "searchByCharacterRank(A)">A랭크
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">중장형
+							<input type="checkbox" id="S" class="form-check-input" onclick = "searchByCharacterRank(S)">S랭크
 						</label>
 					</div>
-					
+				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">AGS
+							<input type="checkbox" id="SS" class="form-check-input" onclick = "searchByCharacterRank(SS)">SS랭크
 						</label>
 					</div>
 				</div>
@@ -125,19 +113,39 @@
 				<div class="container">
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">공격기
+							<input type="checkbox" id="light" class="form-check-input" onclick="searchBycharacterType(light)">경장형
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">보호기
+							<input type="checkbox" id="mobile" class="form-check-input" onclick="searchBycharacterType(mobile)">기동형
 						</label>
 					</div>
 				
 					<div class="form-check-inline">
 						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="">지원기
+							<input type="checkbox" id="heavy" class="form-check-input" onclick="searchBycharacterType(heavy)">중장형
+						</label>
+					</div>
+				</div>
+				
+				<div class="container">
+					<div class="form-check-inline">
+						<label class="form-check-label">
+							<input type="checkbox" id="attacker" class="form-check-input" onclick="searchByCharacterRole(attacker)">공격기
+						</label>
+					</div>
+				
+					<div class="form-check-inline">
+						<label class="form-check-label">
+							<input type="checkbox" id="tanker" class="form-check-input" onclick="searchByCharacterRole(tanker)">보호기
+						</label>
+					</div>
+				
+					<div class="form-check-inline">
+						<label class="form-check-label">
+							<input type="checkbox" id="supporter" class="form-check-input" onclick="searchByCharacterRole(supporter)">지원기
 						</label>
 					</div>
 				</div>
@@ -151,8 +159,9 @@
 			</div>
 		</main>
 		
+		<!--class params write Gideline ==> <div class="brood characterRank characterType characterRole characterSkinType"></div> -->
 		<div class="wrapper">
-			<div>
+			<div class = "bioroid A light attacker">
 				<a class="name" href="character.html?character=miho" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/Profile/Miho.png"><p>T-14 미호</p></a>
 			</div>
 			
