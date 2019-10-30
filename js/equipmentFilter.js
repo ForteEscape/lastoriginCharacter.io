@@ -1,3 +1,4 @@
+//boolean 으로 check유무 선별
 var ischecked_chip = false;
 var ischecked_os = false;
 var ischecked_equipment = false;
