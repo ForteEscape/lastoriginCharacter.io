@@ -2566,20 +2566,3 @@ function searchByCharacterBrood(brood) {
 		}
 	}//brood == ags
 }
-
-function searchByCharacterName(){
-	var $searchCharacterName = $("#cName").val(); // textarea value
-	var characterNameArr = $('.characterName').get();
-	
-	console.log(characterNameArr[0]);
-	
-	/*for(var i = 0; i<characterNameArr.length; i++){
-		if(characterNameArr[i].indexOf($searchCharacterName) != -1){ // 캐릭터 이름이 들어있는 <p>태그 부분 하나를 element으로 하는 array를 만들어 내부 텍스트 비교를 하려고 한다.
-			alert('success');
-		}
-		else{
-			characterNameArr[i].parent().hide();
-		}
-	}*/
-	
-}
