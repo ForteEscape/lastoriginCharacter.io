@@ -2152,4 +2152,414 @@ function searchByCharacterRole(role) {
 	}//role == supporter
 }
 
-function searchByCharacterBrood(brood) {}
+function searchByCharacterBrood(brood) {
+	if(brood == bioroid){
+		if(ischecked_brood_bioroid == false){
+			ischecked_brood_bioroid = true;
+		}
+		else{
+			ischecked_brood_bioroid = false;
+		}
+		
+		if(ischecked_brood_bioroid == true){
+			if(ischecked_brood_ags == false){
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.ags').hide();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.ags').hide();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.ags').hide();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.ags').hide();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.ags').hide();
+						}
+						if(ischecked_A == true){
+							$('.A.ags').hide();
+						}
+						if(ischecked_S == true){
+							$('.S.ags').hide();
+						}
+						if(ischecked_SS == true){
+							$('.SS.ags').hide();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.ags').hide();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.ags').hide();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.ags').hide();
+					}
+				}
+			}
+			else{
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.bioroid').show();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.bioroid').show();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.bioroid').show();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.bioroid').show();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.bioroid').show();
+						}
+						if(ischecked_S == true){
+							$('.S.bioroid').show();
+						}
+						if(ischecked_A == true){
+							$('.A.bioroid').show();
+						}
+						if(ischecked_SS == true){
+							$('.SS.bioroid').show();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.bioroid').show();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.bioroid').show();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.bioroid').show();
+					}
+				}
+			}
+		}
+		else if(ischecked_brood_bioroid == false){
+			if(ischecked_brood_bioroid == false && ischecked_brood_ags == false){
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.bioroid').show();
+							$('.ags').show();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.bioroid').show();
+								$('.attacker.ags').show();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.bioroid').show();
+								$('.tanker.ags').show();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.bioroid').show();
+								$('.supporter.ags').show();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.bioroid').show();
+							$('.B.ags').show();
+						}
+						if(ischecked_A == true){
+							$('.A.bioroid').show();
+							$('.A.ags').show();
+						}
+						if(ischecked_S == true){
+							$('.S.bioroid').show();
+							$('.S.ags').show();
+						}
+						if(ischecked_SS == true){
+							$('.SS.bioroid').show();
+							$('.SS.ags').show();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.bioroid').show();
+						$('.light.ags').show();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.bioroid').show();
+						$('.mobile.ags').show();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.bioroid').show();
+						$('.heavy.ags').show();
+					}
+				}
+			}
+			else{
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.bioroid').hide();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.bioroid').hide();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.bioroid').hide();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.bioroid').hide();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.bioroid').hide();
+						}
+						if(ischecked_A == true){
+							$('.A.bioroid').hide();
+						}
+						if(ischecked_S == true){
+							$('.S.bioroid').hide();
+						}
+						if(ischecked_SS == true){
+							$('.SS.bioroid').hide();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.bioroid').hide();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.bioroid').hide();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.bioroid').hide();
+					}
+				}
+			}
+		}
+	}//brood == bioroid
+	
+	if(brood == ags){
+		if(ischecked_brood_ags == false){
+			ischecked_brood_ags = true;
+		}
+		else{
+			ischecked_brood_ags = false;
+		}
+		
+		if(ischecked_brood_ags == true){
+			if(ischecked_brood_bioroid == false){
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.bioroid').hide();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.bioroid').hide();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.bioroid').hide();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.bioroid').hide();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.bioroid').hide();
+						}
+						if(ischecked_A == true){
+							$('.A.bioroid').hide();
+						}
+						if(ischecked_S == true){
+							$('.S.bioroid').hide();
+						}
+						if(ischecked_SS == true){
+							$('.SS.bioroid').hide();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.bioroid').hide();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.bioroid').hide();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.bioroid').hide();
+					}
+				}
+			}
+			else{
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.ags').show();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.ags').show();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.ags').show();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.ags').show();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.ags').show();
+						}
+						if(ischecked_S == true){
+							$('.S.ags').show();
+						}
+						if(ischecked_A == true){
+							$('.A.ags').show();
+						}
+						if(ischecked_SS == true){
+							$('.SS.ags').show();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.ags').show();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.ags').show();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.ags').show();
+					}
+				}
+			}
+		}
+		else if(ischecked_brood_ags == false){
+			if(ischecked_brood_bioroid == false && ischecked_brood_ags == false){
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.bioroid').show();
+							$('.ags').show();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.bioroid').show();
+								$('.attacker.ags').show();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.bioroid').show();
+								$('.tanker.ags').show();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.bioroid').show();
+								$('.supporter.ags').show();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.bioroid').show();
+							$('.B.ags').show();
+						}
+						if(ischecked_A == true){
+							$('.A.bioroid').show();
+							$('.A.ags').show();
+						}
+						if(ischecked_S == true){
+							$('.S.bioroid').show();
+							$('.S.ags').show();
+						}
+						if(ischecked_SS == true){
+							$('.SS.bioroid').show();
+							$('.SS.ags').show();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.bioroid').show();
+						$('.light.ags').show();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.bioroid').show();
+						$('.mobile.ags').show();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.bioroid').show();
+						$('.heavy.ags').show();
+					}
+				}
+			}
+			else{
+				if(ischecked_lighttype == false && ischecked_mobiletype == false && ischecked_heavytype == false){
+					if(ischecked_B == false && ischecked_A == false && ischecked_S == false && ischecked_SS == false){
+						if(ischecked_attacker == false && ischecked_tanker == false && ischecked_supporter == false){
+							$('.ags').hide();
+						}
+						else{
+							if(ischecked_attacker == true){
+								$('.attacker.ags').hide();
+							}
+							if(ischecked_tanker == true){
+								$('.tanker.ags').hide();
+							}
+							if(ischecked_supporter == true){
+								$('.supporter.ags').hide();
+							}
+						}
+					}
+					else{
+						if(ischecked_B == true){
+							$('.B.ags').hide();
+						}
+						if(ischecked_A == true){
+							$('.A.ags').hide();
+						}
+						if(ischecked_S == true){
+							$('.S.ags').hide();
+						}
+						if(ischecked_SS == true){
+							$('.SS.ags').hide();
+						}
+					}
+				}
+				else{
+					if(ischecked_lighttype == true){
+						$('.light.ags').hide();
+					}
+					if(ischecked_mobiletype == true){
+						$('.mobile.ags').hide();
+					}
+					if(ischecked_heavytype == true){
+						$('.heavy.ags').hide();
+					}
+				}
+			}
+		}
+	}//brood == ags
+}
