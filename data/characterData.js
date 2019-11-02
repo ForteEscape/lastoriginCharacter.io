@@ -23,5 +23,31 @@ var characterStatDataArr=[
 			1,
 			1
 		]
+	},
+	{
+		"id": "beasthunter",
+		"name":"AT-100 비스트헌터",
+		"type": "heavy",
+		"role":"Dealer",
+		"rank":"S",
+		"LVL":1,
+		"HP":210,
+		"ATK":63,
+		"DEF":16,
+		"AGI":3.55,
+		"CRT":10,
+		"HIT":119,
+		"DOD":0,
+		"skillLVL":[
+			1,
+			1,
+			1,
+			1
+		],
+		"skillpower":[
+			1,
+			1,
+			1
+		]
 	}
 ];

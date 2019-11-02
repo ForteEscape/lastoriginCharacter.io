@@ -54,6 +54,8 @@ function drawCharacterPage(stat, desc)
 	$('.btn:first').remove();
 	$('.btn:first').addClass("active");
 	
+	console.log(desc.skills.length);
+	
 	for(var i = 0; i<desc.skills.length; i++)
 	{
 		if(stat.skillLVL[i] != 0 && stat.skillLVL[i] !== undefined){

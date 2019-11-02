@@ -1520,8 +1520,9 @@ function searchByCharacterRole(role) {
 			ischecked_attacker = true;
 		}
 		else{
-			ischecked_attacker == false;
+			ischecked_attacker = false;
 		}
+		
 		
 		if(ischecked_attacker == true){
 			if(ischecked_tanker == false && ischecked_supporter == false){
@@ -1731,9 +1732,10 @@ function searchByCharacterRole(role) {
 		if(ischecked_tanker == false){
 			ischecked_tanker = true;
 		}
-		else{
-			ischecked_tanker == false;
+		else if(ischecked_tanker == true){
+			ischecked_tanker = false;
 		}
+		
 		
 		if(ischecked_tanker == true){
 			if(ischecked_attacker == false && ischecked_supporter == false){
@@ -1943,9 +1945,10 @@ function searchByCharacterRole(role) {
 		if(ischecked_supporter == false){
 			ischecked_supporter = true;
 		}
-		else{
-			ischecked_supporter == false;
+		else if(ischecked_supporter == true){
+			ischecked_supporter = false;
 		}
+		
 		
 		if(ischecked_supporter == true){
 			if(ischecked_tanker == false && ischecked_attacker == false){
