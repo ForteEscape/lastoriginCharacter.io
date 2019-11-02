@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="./js/equipmentFilter.js"></script>
+		<script src="./js/searchByEquipmentName.js"></script>
+		
 		
 		<!-- grid init -->
 		<style>
@@ -110,11 +112,18 @@
 							<input type="checkbox" id="SS" class="form-check-input" onclick = "searchByEquipmentRank(SS)">SS랭크
 						</label>
 					</div>
+					
+					<div class="container">
+						<div class="form-group">
+							<label for="eName">이름: </label>
+							<input type="text" id="eName" placeholder ="이름" style="width=200px">
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
 		
-		<div class="wrapper">
+		<div class="wrapper" id="wrap">
 			<div class="equipment SS">
 				<a class="name" href="equipment.html?equipment=vento" onclick="window.open(this.href, '_blank','width=550, height=550, toolbars=no, scrollbars=no'); return false"><img src="img/equip/vento.png"><p>소완제 수제 도시락</p></a>
 			</div>
