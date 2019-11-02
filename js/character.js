@@ -69,6 +69,9 @@ function drawSkillInfo(idx, LVL, power, desc)
 {
 	$('.skill-name:last').html("<h5> LV. "+LVL+"</h5> <h3>"+desc.name+"</h3>");
 	$('.skill-range:last').html("사정거리 "+desc.range);
+	if(typeof desc.AP != "undefined"){
+		$('.skill-range:last').append("<br>사용 AP "+desc.AP);
+	}
 	if(typeof desc.areadata != "undefined")
 	{
 		drawSkillArea($('.skill-area:last'), desc.areadata);
