@@ -24,7 +24,13 @@ function drawCharacterPage(stat, desc)
 	document.title = characterName+'정보';
 	
 	$('#name').append(characterName);
-	$('.image').append("<img src=\"img/Profile/"+desc.img+".png\" style=\"width 100%\" />");
+	
+	if(stat.brood == "bioroid"){
+		$('.image').append("<img src=\"img/Profile/bioroid/"+desc.img+".png\" style=\"width 100%\" />");
+	}
+	else if(stat.brood == "ags"){
+		$('.image').append("<img src=\"img/Profile/ags/"+desc.img+".png\" style=\"width 100%\" />");
+	}
 	writeData('LVL', stat.LVL);
 	writeData('HP', stat.HP);
 	writeData('ATK', stat.ATK);
