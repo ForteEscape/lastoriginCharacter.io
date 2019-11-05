@@ -3,9 +3,9 @@
 > 2. 사이트 링크 <https://forteescape.github.io/lastoriginCharacter.io/>
 
 ## 사용 라이브러리
-1. jQuery(3.4.1 version)
-2. bootstrap3 (index.html에 사용)
-3. popper.js (index.html에 사용)
+1. jQuery(ver 3.4.1)
+2. bootstrap4
+3. popper.js
 
 ## 현재 사용가능한 기능
 * 케릭터 도감에서 케릭터 스텟 확인 및 케릭터 검색 기능
