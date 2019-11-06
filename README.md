@@ -6,6 +6,7 @@
 1. jQuery(ver 3.4.1)
 2. bootstrap4
 3. popper.js
+4. tinyplayer.js(음악 재생 관련 - 링크 <https://github.com/mrt-prodz/Tiny-HTML5-Music-Player>)
 
 ## 현재 사용가능한 기능
 * 케릭터 도감에서 케릭터 스텟 확인 및 케릭터 검색 기능
