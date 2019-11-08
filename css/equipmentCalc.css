@@ -25,6 +25,10 @@ ul {
     background-color: #fdfdfd;
 }
 
+.eq{
+	border: 1px solid skyblue;
+}
+
 .info-container {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);

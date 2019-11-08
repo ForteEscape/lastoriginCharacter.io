@@ -58,3 +58,13 @@ function getURLParameter(sParam)
 		}
 	}
 }
+
+async function loadEquipmentStatDataArr(){
+	return new Promise((resolve, reject)=> {
+		var src = "./data/equipmentData.js";
+		loadData(src).then(()=> {
+			var equipmentDataArr = equipmentStatDataArr;
+			resolve(equipmentDataArr);
+		})
+	});
+}
