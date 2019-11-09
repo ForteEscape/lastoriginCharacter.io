@@ -52,7 +52,7 @@ ul {
 }
 
 .LVL {
-	grid-area: 2 / 10 / 3 / 13;
+	grid-area: 2 / 10 / 3 / 10;
 	text-align: right;
 	padding-right: 25%;
 }
