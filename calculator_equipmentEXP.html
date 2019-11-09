@@ -105,66 +105,58 @@
 		
 		
 		<br><br>
-		<div class="container">
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-					장비 목록
-				</button>
-				<div class="dropdown-menu" id="equipmentList">
-					
-				</div>
-				
-			</div>
-		</div>
-		<br>
-		<div class="container" id="selectLevel">
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" id="eqlevel" data-toggle="dropdown">
-					설정 LV.
-				</button>
-				<div class="dropdown-menu" id="equipmentLevel">
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">1</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">2</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">3</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">4</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">5</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">6</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">7</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">8</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">9</a>
-					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">10</a>
-				</div>
-			</div>
-		</div>
-		<br><br>
 		
-		<div class="container eq">
-			<div class="info-container">
-				<div class="image" id="img"></div>
-				<div class="name">
-					<h4 class="equipmentName" id="name"></h4>
-				</div>
-				
-				<div class="LVL">
-					<h3 class="equipmentLv" id="LVL"></h3>
-				</div>
-				<div class="spec-wrap">
-					<div class="spec-item">랭크</div><div class="spec-item" name="stat" id="rank"></div>
-					<div class="spec-item" name="stat" id="HP"></div>
-					<div class="spec-item">추가 공격력</div><div class="spec-item" name="stat" id="ATK">+</div>
-					<div class="spec-item">추가 치명타</div><div class="spec-item" name="stat" id="CRT">+</div>
-					<div class="spec-item">추가 방어력</div><div class="spec-item" name="stat" id="DEF">+</div>
-					<div class="spec-item">추가 적중률</div><div class="spec-item" name="stat" id="HIT">+</div>
-					<div class="spec-item">추가 행동력</div><div class="spec-item" name="stat" id="AGI">+</div>
-					<div class="spec-item">추가 회피율</div><div class="spec-item" name="stat" id="DOD">+</div>
-				</div>
-			</div>
-			
-			<br>
-			<h3>장비 설명</h3>
-			<div class="descript-wrap" id="descript"></div>
-			
+		<div class="container">
+			<table class="table table-striped table-dark">
+				<thead>
+					<th scope="col" style="width: 120px; text-align: center">리스트</th>
+					<th scope="col" style="text-align: center">장비</th>
+					<th scope="col" style="width: 120px; text-align: center">장비 랭크</th>
+					<th scope="col" style="width: 120px; text-align: center">현재 레벨</th>
+					<th scope="col" style="width: 120px; text-align: center">목표 레벨</th>
+					<th scope="col" style="width: 240px; text-align: center">현재 경험치</th>
+					<th scope="col" style="width: 240px; text-align: center">필요 경험치</th>
+				</thead>
+				<tbody>
+					<td scope="row">1</td>
+					<td>
+						<div class="dropdown" style="text-align: center">
+							<button class="btn btn-secondary dropdown-toggle" id="equipment_name" data-toggle="dropdown">
+								장비 목록
+							</button>
+							<div class="dropdown-menu" id="equipmentList">
+								<a href="#" class="dropdown-item" onclick="init_equipment()">없음</a>
+							</div>
+						</div>
+					</td>
+					<td id="rank_slot1" style="text-align: center; font-size: large"></td>
+					<td id="currentLv_slot1" style="text-align: center"></td>
+					<td id="goalLv_slot1" style="text-align: center">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" id="eqlevel" data-toggle="dropdown">
+								Lv
+							</button>
+							<div class="dropdown-menu" id="equipmentLevel">
+								<a href="#" class="dropdown-item level" style="text-align:center" onclick="setEquipmentLevel(0)">없음</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(1)">1</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(2)">2</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(3)">3</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(4)">4</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(5)">5</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(6)">6</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(7)">7</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(8)">8</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(9)">9</a>
+								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(10)">10</a>
+							</div>
+						</div>
+					</td>
+					<td id="currentEXP_slot1" style="text-align: center"></td>
+					<td id="occuredEXP_slot1" style="text-align: center"></td> 
+				</tbody>
+			</table>
 		</div>
+		
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
