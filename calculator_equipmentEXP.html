@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/index_dropdown.css">
 		<link rel="stylesheet" href="css/equipmentCalc.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="./js/index.js"></script>
 		<script src="./js/base.js"></script>
 		<script src="./js/calc_equipmentEXP.js"></script>
@@ -112,12 +113,30 @@
 				<div class="dropdown-menu" id="equipmentList">
 					
 				</div>
+				
 			</div>
 		</div>
-		<div class="container" id="equipment_current">
-			
+		<br>
+		<div class="container" id="selectLevel">
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" id="eqlevel" data-toggle="dropdown">
+					설정 LV.
+				</button>
+				<div class="dropdown-menu" id="equipmentLevel">
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">1</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">2</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">3</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">4</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">5</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">6</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">7</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">8</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">9</a>
+					<a href="#" class="dropdown-item level" style="text-align: center" onclick="getEquipmentLevel()">10</a>
+				</div>
+			</div>
 		</div>
-		<br><br><br><br>
+		<br><br>
 		
 		<div class="container eq">
 			<div class="info-container">

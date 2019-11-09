@@ -9,19 +9,8 @@ window.onload = async function(){
 
 function drawEquipmentList(data){
 	for(var i = 0; i<data.length; i++){
-		$('#equipmentList').append("<a class='dropdown-item' href='#' onClick = 'equipmentChk("+i+")'>"+ data[i].name +"</a>"); // List의 onClick 부문에서 장비의 id를 param으로 보내야한다.
+		$('#equipmentList').append("<a class='dropdown-item' href='#' onClick = 'equipmentChk("+i+")'>"+ data[i].name +"</a>"); 
 	}
-}
-
-function calcEquipmentData(data){
-	var equipment_HP = data.HP;
-	var equipment_ATK = data.ATK;
-	var equipment_DEF = data.DEF;
-	var equipment_AGI = data.AGI;
-	var equipment_DOD = data.DOD;
-	var equipment_CRT = data.CRT;
-	var equipemnt_HIT = data.HIT;
-	
 }
 
 async function equipmentChk(param){
@@ -116,5 +105,27 @@ function writeData(str1, str2)
 	if(str1.endsWith('LVL')){
 		$('#'+str1).prepend('LV.');
 	}
+}
+
+function getEquipmentLevel(){
+	if(!$('#eqLevel').text()){
+		console.log("empty");
+	}
+	else console.log($('#eqLevel').text());
+	
+	//return $(this).text();
+	
+	
+}
+
+function calcEquipmentData(data){
+	var equipment_HP = data.HP;
+	var equipment_ATK = data.ATK;
+	var equipment_DEF = data.DEF;
+	var equipment_AGI = data.AGI;
+	var equipment_DOD = data.DOD;
+	var equipment_CRT = data.CRT;
+	var equipemnt_HIT = data.HIT;
+	
 }
 
