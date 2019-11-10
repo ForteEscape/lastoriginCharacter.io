@@ -116,7 +116,8 @@
 					<th scope="col" style="width: 120px; text-align: center">목표 레벨</th>
 					<th scope="col" style="width: 240px; text-align: center">현재 경험치</th>
 					<th scope="col" style="width: 240px; text-align: center">필요 경험치</th>
-				</thead>
+					<th scope="col" style="width: 240px; text-align: center">계산 실행</th>
+ 				</thead>
 				<tbody>
 					<td scope="row">1</td>
 					<td>
@@ -132,27 +133,28 @@
 					<td id="rank_slot1" style="text-align: center; font-size: large"></td>
 					<td id="currentLv_slot1" style="text-align: center"></td>
 					<td id="goalLv_slot1" style="text-align: center">
-						<div class="dropdown">
-							<button class="btn btn-secondary dropdown-toggle" id="eqlevel" data-toggle="dropdown">
-								Lv
-							</button>
-							<div class="dropdown-menu" id="equipmentLevel">
-								<a href="#" class="dropdown-item level" style="text-align:center" onclick="setEquipmentLevel(0)">없음</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(1)">1</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(2)">2</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(3)">3</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(4)">4</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(5)">5</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(6)">6</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(7)">7</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(8)">8</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(9)">9</a>
-								<a href="#" class="dropdown-item level" style="text-align: center" onclick="setEquipmentLevel(10)">10</a>
-							</div>
+						<div class="form-group">
+							<select class="form-control" id="level">
+								<option id="1">LV. 1</option>
+								<option id="2">LV. 2</option>
+								<option id="3">LV. 3</option>
+								<option id="4">LV. 4</option>
+								<option id="5">LV. 5</option>
+								<option id="6">LV. 6</option>
+								<option id="7">LV. 7</option>
+								<option id="8">LV. 8</option>
+								<option id="9">LV. 9</option>
+								<option id="10">LV. 10</option>
+							</select>
 						</div>
 					</td>
 					<td id="currentEXP_slot1" style="text-align: center"></td>
-					<td id="occuredEXP_slot1" style="text-align: center"></td> 
+					<td id="occuredEXP_slot1" style="text-align: center"></td>
+					<td id="excuteCalc_slot1" style="text-align: center">
+						<button class="btn btn-secondary" onclick="calcEXP()">
+							Go!
+						</button>
+					</td>
 				</tbody>
 			</table>
 		</div>
