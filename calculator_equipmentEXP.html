@@ -113,48 +113,94 @@
 					<th scope="col" style="text-align: center">장비</th>
 					<th scope="col" style="width: 120px; text-align: center">장비 랭크</th>
 					<th scope="col" style="width: 120px; text-align: center">현재 레벨</th>
-					<th scope="col" style="width: 120px; text-align: center">목표 레벨</th>
+					<th scope="col" style="width: 180px; text-align: center">목표 레벨</th>
 					<th scope="col" style="width: 240px; text-align: center">현재 경험치</th>
 					<th scope="col" style="width: 240px; text-align: center">필요 경험치</th>
 					<th scope="col" style="width: 240px; text-align: center">계산 실행</th>
  				</thead>
 				<tbody>
-					<td scope="row">1</td>
-					<td>
-						<div class="dropdown" style="text-align: center">
-							<button class="btn btn-secondary dropdown-toggle" id="equipment_name" data-toggle="dropdown">
-								장비 목록
-							</button>
-							<div class="dropdown-menu" id="equipmentList">
-								<a href="#" class="dropdown-item" onclick="init_equipment()">없음</a>
+					<tr>
+						<td scope="row">1</td>
+						<td>
+							<div class="dropdown" style="text-align: center">
+								<button class="btn btn-secondary dropdown-toggle" id="equipment_name1" data-toggle="dropdown">
+									장비 목록
+								</button>
+								<div class="dropdown-menu" id="equipmentList1">
+									<a href="#" class="dropdown-item" id="slot1" onclick="init_equipment(1)">없음</a>
+								</div>
 							</div>
-						</div>
-					</td>
-					<td id="rank_slot1" style="text-align: center; font-size: large"></td>
-					<td id="currentLv_slot1" style="text-align: center"></td>
-					<td id="goalLv_slot1" style="text-align: center">
-						<div class="form-group">
-							<select class="form-control" id="level">
-								<option id="1">LV. 1</option>
-								<option id="2">LV. 2</option>
-								<option id="3">LV. 3</option>
-								<option id="4">LV. 4</option>
-								<option id="5">LV. 5</option>
-								<option id="6">LV. 6</option>
-								<option id="7">LV. 7</option>
-								<option id="8">LV. 8</option>
-								<option id="9">LV. 9</option>
-								<option id="10">LV. 10</option>
-							</select>
-						</div>
-					</td>
-					<td id="currentEXP_slot1" style="text-align: center"></td>
-					<td id="occuredEXP_slot1" style="text-align: center"></td>
-					<td id="excuteCalc_slot1" style="text-align: center">
-						<button class="btn btn-secondary" onclick="calcEXP()">
-							Go!
-						</button>
-					</td>
+						</td>
+						<td id="rank_slot1" style="text-align: center; font-size: large"></td>
+						<td id="currentLv_slot1" style="text-align: center"></td>
+						<td id="goalLv_slot1" style="text-align: center">
+							<div class="form-group">
+								<select class="form-control" id="level_slot1">
+									<option id="none">없음</option>
+									<option id="0">LV. 0</option>
+									<option id="1">LV. 1</option>
+									<option id="2">LV. 2</option>
+									<option id="3">LV. 3</option>
+									<option id="4">LV. 4</option>
+									<option id="5">LV. 5</option>
+									<option id="6">LV. 6</option>
+									<option id="7">LV. 7</option>
+									<option id="8">LV. 8</option>
+									<option id="9">LV. 9</option>
+									<option id="10">LV. 10</option>
+								</select>
+							</div>
+						</td>
+						<td id="currentEXP_slot1" style="text-align: center"></td>
+						<td id="occuredEXP_slot1" style="text-align: center"></td>
+						<td id="excuteCalc_slot1" style="text-align: center">
+							<button class="btn btn-secondary" onclick="calcEXP()">
+								Go!
+							</button>
+						</td>
+					</tr>
+					
+					<tr>
+						<td scope="row">2</td>
+						<td>
+							<div class="dropdown" style="text-align: center">
+								<button class="btn btn-secondary dropdown-toggle" id="equipment_name2" data-toggle="dropdown">
+									장비 목록
+								</button>
+								<div class="dropdown-menu" id="equipmentList2">
+									<a href="#" class="dropdown-item" id="slot2" onclick="init_equipment(2)">없음</a>
+								</div>
+							</div>
+						</td>
+						<td id="rank_slot2" style="text-align: center; font-size: large"></td>
+						<td id="currentLv_slot2" style="text-align: center"></td>
+						<td id="goalLv_slot2" style="text-align: center">
+							<div class="form-group">
+								<select class="form-control" id="level_slot2">
+									<option id="none">없음</option>
+									<option id="0">LV. 0</option>
+									<option id="1">LV. 1</option>
+									<option id="2">LV. 2</option>
+									<option id="3">LV. 3</option>
+									<option id="4">LV. 4</option>
+									<option id="5">LV. 5</option>
+									<option id="6">LV. 6</option>
+									<option id="7">LV. 7</option>
+									<option id="8">LV. 8</option>
+									<option id="9">LV. 9</option>
+									<option id="10">LV. 10</option>
+								</select>
+							</div>
+						</td>
+						<td id="currentEXP_slot2" style="text-align: center"></td>
+						<td id="occuredEXP_slot2" style="text-align: center"></td>
+						<td id="excuteCalc_slot2" style="text-align: center">
+							<button class="btn btn-secondary" onclick="calcEXP()">
+								Go!
+							</button>
+						</td>
+					</tr>
+					
 				</tbody>
 			</table>
 		</div>
