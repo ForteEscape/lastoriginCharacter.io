@@ -22,6 +22,14 @@ function init_equipment(slot_param){
 		$('#rank_slot1').text(" ");
 		$('#currentLv_slot1').text(" ");
 		$('#currentEXP_slot1').text(" ");
+		$('#img1').remove();
+	}
+	if(slot_param == 2){
+		$('#equipment_name2').text("장비 목록");
+		$('#rank_slot2').text(" ");
+		$('#currentLv_slot2').text(" ");
+		$('#currentEXP_slot2').text(" ");
+		$('#img2').remove();
 	}
 	
 	data_param = -1;
@@ -38,24 +46,32 @@ async function equipmentChk(param, slot_num){
 		$('#rank_slot1').text(equipment_stat.rank);
 		$('#currentLv_slot1').text(equipment_stat.LVL);
 		$('#currentEXP_slot1').text(equipment_stat.curEXP);
+		$('#img1').remove();
+		$('#slot1_img').append("<img id=img1 src=./img/equip/"+equipment_stat.img+".png style=\"width: 50px; heigh: 50px;\" >");
 	}
 	else if(slot_num == 2){
 		$('#equipment_name2').text(equipment_stat.name);
 		$('#rank_slot2').text(equipment_stat.rank);
 		$('#currentLv_slot2').text(equipment_stat.LVL);
 		$('#currentEXP_slot2').text(equipment_stat.curEXP);
+		$('#img2').remove();
+		$('#slot2_img').append("<img id=img2 src=./img/equip/"+equipment_stat.img+".png style=\"width: 50px; heigh: 50px;\" >");
 	}
 	else if(slot_num == 3){
 		$('#equipment_name3').text(equipment_stat.name);
 		$('#rank_slot3').text(equipment_stat.rank);
 		$('#currentLv_slot3').text(equipment_stat.LVL);
 		$('#currentEXP_slot3').text(equipment_stat.curEXP);
+		$('#img3').remove();
+		$('#slot3_img').append("<img id=img3 src=./img/equip/"+equipment_stat.img+".png style=\"width: 50px; heigh: 50px;\" >");
 	}
 	else if(slot_num == 4){
 		$('#equipment_name4').text(equipment_stat.name);
 		$('#rank_slot4').text(equipment_stat.rank);
 		$('#currentLv_slot4').text(equipment_stat.LVL);
 		$('#currentEXP_slot4').text(equipment_stat.curEXP);
+		$('#img4').remove();
+		$('#slot4_img').append("<img id=img4 src=./img/equip/"+equipment_stat.img+".png style=\"width: 50px; heigh: 50px;\" >");
 	}
 	
 	data_param = param;
