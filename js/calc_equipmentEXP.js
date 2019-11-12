@@ -62,8 +62,6 @@ async function equipmentChk(param, slot_num){
 	var equipment_arr = await loadEquipmentStatDataArr();
 	var equipment_stat = await loadEquipmentStatData(equipment_arr[param].id);
 	
-	//console.log(slot_num);
-	
 	if(slot_num == 1){
 		$('#equipment_name1').text(equipment_stat.name);
 		$('#rank_slot1').text(equipment_stat.rank);
@@ -232,9 +230,6 @@ async function calcEXP(){
 		}
 	}
 	
-	//console.log('needEXP_slot1 : '+needEXP_slot1);
-	//console.log('needEXP_slot2 : '+needEXP_slot2);
-	
 	if(slot_number1 != 0){
 		$('#occuredEXP_slot1').text(needEXP_slot1);
 	}
@@ -248,7 +243,10 @@ async function calcEXP(){
 		$('#occuredEXP_slot4').text(needEXP_slot4);
 	}
 	
-	//console.log(equipment_stat.name);
-	//console.log(equipment_goal_level);
+	showResult();
+}
+
+function showResult(){
+	
 }
 

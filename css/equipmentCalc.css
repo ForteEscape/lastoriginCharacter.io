@@ -25,6 +25,21 @@ ul {
     background-color: #fdfdfd;
 }
 
+.stat-container{
+	max-width: 1500px;
+    background-color: #fdfdfd;
+	display: inline;
+	border: 1px solid blue;
+}
+
+.container.stat {
+    max-width: 540px;
+    background-color: #fdfdfd;
+	float: left;
+	margin: 20px;
+	border: 1px solid skyblue;
+}
+
 .eq{
 	border: 1px solid skyblue;
 }
