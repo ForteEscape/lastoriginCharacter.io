@@ -283,7 +283,7 @@ async function showResult(){
 		}
 	}
 	else{
-		
+		eraseData(1);
 	}
 	
 	if(slot_number2_result != 0 && equipmentParam_slot2_result != -1){
@@ -300,7 +300,7 @@ async function showResult(){
 		}
 	}
 	else{
-		
+		eraseData(2);
 	}
 	
 	if(slot_number3_result != 0 && equipmentParam_slot3_result != -1){
@@ -317,7 +317,7 @@ async function showResult(){
 		}
 	}
 	else{
-		
+		eraseData(3);
 	}
 	
 	if(slot_number4_result != 0 && equipmentParam_slot4_result != -1){
@@ -334,7 +334,7 @@ async function showResult(){
 		}
 	}
 	else{
-		
+		eraseData(4);
 	}
 }
 
