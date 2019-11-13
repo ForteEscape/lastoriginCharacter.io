@@ -8,6 +8,11 @@ var slot_id2 = 0;
 var slot_id3 = 0;
 var slot_id4 = 0;
 
+var showResult_cnt_slot1 = -1;
+var showResult_cnt_slot2 = -1;
+var showResult_cnt_slot3 = -1;
+var showResult_cnt_slot4 = -1;
+
 window.onload = async function(){
 	var equipment_data = await loadEquipmentStatDataArr()
 	
@@ -246,7 +251,147 @@ async function calcEXP(){
 	showResult();
 }
 
-function showResult(){
+async function showResult(){
+	var slot_number1_result = slot_id1;
+	var slot_number2_result = slot_id2;
+	var slot_number3_result = slot_id3;
+	var slot_number4_result = slot_id4;
 	
+	var equipmentParam_slot1_result = data_param1;
+	var equipmentParam_slot2_result = data_param2;
+	var equipmentParam_slot3_result = data_param3;
+	var equipmentParam_slot4_result = data_param4;
+	
+	var equipment_arr = await loadEquipmentStatDataArr();
+	
+	var equipment_stat1_show;
+	var equipment_stat2_show;
+	var equipment_stat3_show;
+	var equipment_stat4_show;
+	
+	if(slot_number1_result != 0 && equipmentParam_slot1_result != -1){
+		showResult_cnt_slot1++;
+		
+		equipment_stat1_show = await loadEquipmentStatData(equipment_arr[equipmentParam_slot1_result].id);
+		
+		if(showResult_cnt_slot1 == 0){
+			showData(equipment_stat1_show, 1);
+		}
+		else{
+			eraseData(1);
+			showData(equipment_stat1_show, 1);
+		}
+	}
+	else{
+		
+	}
+	
+	if(slot_number2_result != 0 && equipmentParam_slot2_result != -1){
+		showResult_cnt_slot2++;
+		
+		equipment_stat2_show = await loadEquipmentStatData(equipment_arr[equipmentParam_slot2_result].id);
+		
+		if(showResult_cnt_slot2 == 0){
+			showData(equipment_stat2_show, 2);
+		}
+		else{
+			eraseData(2);
+			showData(equipment_stat2_show, 2);
+		}
+	}
+	else{
+		
+	}
+	
+	if(slot_number3_result != 0 && equipmentParam_slot3_result != -1){
+		showResult_cnt_slot3++;
+		
+		equipment_stat3_show = await loadEquipmentStatData(equipment_arr[equipmentParam_slot3_result].id);
+		
+		if(showResult_cnt_slot3 == 0){
+			showData(equipment_stat3_show, 3);
+		}
+		else{
+			eraseData(3);
+			showData(equipment_stat3_show, 3);
+		}
+	}
+	else{
+		
+	}
+	
+	if(slot_number4_result != 0 && equipmentParam_slot4_result != -1){
+		showResult_cnt_slot4++;
+		
+		equipment_stat4_show = await loadEquipmentStatData(equipment_arr[equipmentParam_slot4_result].id);
+		
+		if(showResult_cnt_slot4 == 0){
+			showData(equipment_stat4_show, 4);
+		}
+		else{
+			eraseData(4);
+			showData(equipment_stat4_show, 4);
+		}
+	}
+	else{
+		
+	}
+}
+
+function showData(data, slot){
+	if(data.nickname){
+		var equipment_name = data.nickname;
+	}
+	else{
+		var equipment_name = data.name;
+	}
+	
+	$('#name.slot'+slot).append(equipment_name);
+	$('.image.slot'+slot).append("<img src=img/equip/"+data.img+".png style= width 100% />");
+	writeData('LVL', 'slot'+slot, data.LVL);
+	writeData('rank', 'slot'+slot, data.rank);
+	writeData('HP', 'slot'+slot, data.HP);
+	writeData('ATK', 'slot'+slot, data.ATK);
+	writeData('DEF', 'slot'+slot, data.DEF);
+	writeData('AGI', 'slot'+slot, data.AGI);
+	writeData('CRT', 'slot'+slot, data.CRT);
+	writeData('HIT', 'slot'+slot, data.HIT);
+	writeData('DOD', 'slot'+slot, data.DOD);
+	writeData('descript', 'slot'+slot, data.descript);
+}
+
+function eraseData(slot){
+	$('#name.slot'+slot).text(" ");
+	$('.image.slot'+slot).empty();
+	$('#LVL.slot'+slot).text("LV. ");
+	$('#rank.slot'+slot).text(" ");
+	$('#HP.slot'+slot).text("");
+	$('#ATK.slot'+slot).text(" ");
+	$('#DEF.slot'+slot).text(" ");
+	$('#AGI.slot'+slot).text(" ");
+	$('#CRT.slot'+slot).text(" ");
+	$('#HIT.slot'+slot).text(" ");
+	$('#DOD.slot'+slot).text(" ");
+	$('#descript.slot'+slot).text(" ");
+}
+
+function writeData(str1, str2, str3)
+{
+	if(str3 == -1)
+	{
+		$('#'+str1+'.'+str2).append('???');
+	}
+	else
+	{
+		$('#'+str1+'.'+str2).append(str3);
+	}
+	if(str1.endsWith('HIT') || str1.endsWith('CRT') || str1.endsWith('DOD') || str1.endsWith('ATK') || str1.endsWith('DEF') || str1.endsWith('AGI'))
+	{
+		$('#'+str1+'.'+str2).prepend('+');
+		$('#'+str1+'.'+str2).append(' %');
+	}
+	if(str1.endsWith('HP')){
+		$('#'+str1+'.'+str2).prepend('추가 HP: +');
+	}
 }
 
