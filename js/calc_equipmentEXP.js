@@ -186,6 +186,8 @@ async function calcEXP(){
 		equipment_goal_level4 = $('#level_slot4 option:selected').attr('id');
 	}
 	
+	// TODO: current level select and calculate needEXP for level up to goal level
+	
 	if(equipment_goal_level == "none"){
 		if(slot_number1 != 0){
 			$('#occuredEXP_slot1').text(" ");
