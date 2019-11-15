@@ -339,6 +339,15 @@ async function showResult(){
 }
 
 function showData(data, slot){
+	var equipment_level_final = 0;
+	var equipment_ATK_final;
+	var equipment_DEF_final;
+	var equipment_CRT_final;
+	var equipment_DOD_final;
+	var equipment_AGI_final;
+	var equipment_HIT_final;
+	var equipment_HP_final;
+	
 	if(data.nickname){
 		var equipment_name = data.nickname;
 	}
@@ -346,18 +355,68 @@ function showData(data, slot){
 		var equipment_name = data.name;
 	}
 	
+	equipment_level_final = $('#level_slot'+slot+' option:selected').attr('id');
+	equipment_ATK_final = data.ATK + (data.ATK_perlevel*equipment_level_final);
+	equipment_DEF_final = data.DEF + (data.DEF_perlevel*equipment_level_final);
+	equipment_CRT_final = data.CRT + (data.CRT_perlevel*equipment_level_final);
+	equipment_DOD_final = data.DOD + (data.DOD_perlevel*equipment_level_final);
+	equipment_AGI_final = data.AGI + (data.AGI_perlevel*equipment_level_final);
+	equipment_HIT_final = data.HIT + (data.HIT_perlevel*equipment_level_final);
+	equipment_HP_final = data.HP + (data.HP_perlevel*equipment_level_final);
+	
 	$('#name.slot'+slot).append(equipment_name);
 	$('.image.slot'+slot).append("<img src=img/equip/"+data.img+".png style= width 100% />");
-	writeData('LVL', 'slot'+slot, data.LVL);
+	writeData('LVL', 'slot'+slot, equipment_level_final);
 	writeData('rank', 'slot'+slot, data.rank);
-	writeData('HP', 'slot'+slot, data.HP);
-	writeData('ATK', 'slot'+slot, data.ATK);
-	writeData('DEF', 'slot'+slot, data.DEF);
-	writeData('AGI', 'slot'+slot, data.AGI);
-	writeData('CRT', 'slot'+slot, data.CRT);
-	writeData('HIT', 'slot'+slot, data.HIT);
-	writeData('DOD', 'slot'+slot, data.DOD);
+	writeData('HP', 'slot'+slot, equipment_HP_final);
+	writeData('ATK', 'slot'+slot, equipment_ATK_final);
+	writeData('DEF', 'slot'+slot, equipment_DEF_final);
+	writeData('AGI', 'slot'+slot, equipment_AGI_final);
+	writeData('CRT', 'slot'+slot, equipment_CRT_final);
+	writeData('HIT', 'slot'+slot, equipment_HIT_final);
+	writeData('DOD', 'slot'+slot, equipment_DOD_final);
 	writeData('descript', 'slot'+slot, data.descript);
+	
+	if(data.ATK >= 0){
+		$('#ATK.slot'+slot).prepend('+');
+	}
+	if(data.DEF >= 0){
+		$('#DEF.slot'+slot).prepend('+');
+	}
+	if(data.CRT >= 0){
+		$('#CRT.slot'+slot).prepend('+');
+	}
+	if(data.AGI >= 0){
+		$('#AGI.slot'+slot).prepend('+');
+	}
+	if(data.DOD >= 0){
+		$('#DOD.slot'+slot).prepend('+');
+	}
+	if(data.HIT >= 0){
+		$('#HIT.slot'+slot).prepend('+');
+	}
+	
+	if(data.ATK_gotPercentage == 0){
+		$('#ATK.slot'+slot).append('%');
+	}
+	if(data.DEF_gotPercentage == 0){
+		$('#DEF.slot'+slot).append('%');
+	}
+	if(data.CRT_gotPercentage == 0){
+		$('#CRT.slot'+slot).append('%');
+	}
+	if(data.AGI_gotPercentage == 0){
+		$('#AGI.slot'+slot).append('%');
+	}
+	if(data.DOD_gotPercentage == 0){
+		$('#DOD.slot'+slot).append('%');
+	}
+	if(data.HIT_gotPercentage == 0){
+		$('#HIT.slot'+slot).append('%');
+	}
+	if(data.HP_gotPercentage == 0){
+		$('#HP.slot'+slot).append('%');
+	}
 }
 
 function eraseData(slot){
@@ -384,11 +443,6 @@ function writeData(str1, str2, str3)
 	else
 	{
 		$('#'+str1+'.'+str2).append(str3);
-	}
-	if(str1.endsWith('HIT') || str1.endsWith('CRT') || str1.endsWith('DOD') || str1.endsWith('ATK') || str1.endsWith('DEF') || str1.endsWith('AGI'))
-	{
-		$('#'+str1+'.'+str2).prepend('+');
-		$('#'+str1+'.'+str2).append(' %');
 	}
 	if(str1.endsWith('HP')){
 		$('#'+str1+'.'+str2).prepend('추가 HP: +');
