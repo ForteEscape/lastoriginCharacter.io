@@ -25,11 +25,11 @@ window.onload = async function(){
 	$('#result').click(function(){
 		if(showEquipmentStatflag == false){
 			showEquipmentStatflag = true;
-			$('#canvas').show();
+			$('#canvas').show("slow");
 		}
 		else if(showEquipmentStatflag == true){
 			showEquipmentStatflag = false;
-			$('#canvas').hide();
+			$('#canvas').hide("slow");
 		}
 	});
 }
