@@ -19,6 +19,7 @@ var showEquipmentCostflag = false;
 window.onload = async function(){
 	var equipment_data = await loadEquipmentStatDataArr()
 	$('#canvas').hide();
+	$('#cost_canvas').hide();
 	
 	drawEquipmentList(equipment_data);
 	
@@ -30,6 +31,17 @@ window.onload = async function(){
 		else if(showEquipmentStatflag == true){
 			showEquipmentStatflag = false;
 			$('#canvas').hide("slow");
+		}
+	});
+	
+	$('#cost').click(function(){
+		if(showEquipmentCostflag == false){
+			showEquipmentCostflag = true;
+			$('#cost_canvas').show();
+		}
+		else if(showEquipmentCostflag == true){
+			showEquipmentCostflag = false;
+			$('#cost_canvas').hide();
 		}
 	});
 }
@@ -165,8 +177,20 @@ async function calcEXP(){
 	var equipment_goal_level3;
 	var equipment_goal_level4;
 	
-	var table_SS = [0, 1500, 2325, 3150, 3975, 4800, 5625, 6450, 7275, 8100, 8925];
-	var table_S;
+	var table_SS_1500 = [0, 1500, 2325, 3150, 3975, 4800, 5625, 6450, 7275, 8100, 8925];
+	var table_SS_1250 = [0, 1250, 1937, 2625, 3312, 4000, 4687, 5375, 6062, 6750, 7437];
+	var table_SS_1000 = [0, 1000, 1550, 2100, 2650, 3200, 3750, 4300, 4850, 5400, 5950];
+	var table_SS_750 = [0, 750, 1162, 1575, 1987, 2400, 2812, 3225, 3637, 4050, 4462];
+	var table_SS_625 = [0, 625, 969, 1313, 1656, 1999, 2343, 2687, 3031, 3375, 3719];
+	var table_SS_500 = [0, 500, 775, 1050, 1325, 1600, 1875, 2150, 2425, 2700, 2975];
+	
+	var table_S_750;
+	var table_S_625;
+	var table_S_500;
+	var table_S_375;
+	var table_S_312;
+	var table_S_250;
+	
 	var table_A;
 	var table_B;
 	
@@ -174,6 +198,26 @@ async function calcEXP(){
 	var needEXP_slot2 = 0;
 	var needEXP_slot3 = 0;
 	var needEXP_slot4 = 0;
+	
+	var needMaterial_SS_slot1;
+	var needMaterial_S_slot1;
+	var needMaterial_A_slot1;
+	var needMaterial_B_slot1;
+	
+	var needMaterial_SS_slot2;
+	var needMaterial_S_slot2;
+	var needMaterial_A_slot2;
+	var needMaterial_B_slot2;
+	
+	var needMaterial_SS_slot3;
+	var needMaterial_S_slot3;
+	var needMaterial_A_slot3;
+	var needMaterial_B_slot3;
+	
+	var needMaterial_SS_slot4;
+	var needMaterial_S_slot4;
+	var needMaterial_A_slot4;
+	var needMaterial_B_slot4;
 	
 	if(slot_number1 != 0 && equipmentParam_slot1 != -1){
 		equipment_stat1 = await loadEquipmentStatData(equipment_arr[equipmentParam_slot1].id);
@@ -224,29 +268,161 @@ async function calcEXP(){
 	else{
 		if(slot_number1 != 0){
 			if(equipment_stat1.rank == "SS"){
-				for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
-					needEXP_slot1 += table_SS[i];
+				if(equipment_stat1.levelType == 1500){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_1500[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
+				}
+				else if(equipment_stat1.levelType == 1250){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_1250[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
+				}
+				else if(equipment_stat1.levelType == 1000){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_1000[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
+				}
+				else if(equipment_stat1.levelType == 750){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_750[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
+				}
+				else if(equipment_stat1.levelType == 625){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_625[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
+				}
+				else if(equipment_stat1.levelType == 500){
+					for(var i = equipment_stat1.LVL; i<=equipment_goal_level; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot1 += table_SS_500[i];
+					}
+					calcMaterialNum(needEXP_slot1, 1, equipment_stat1.name);
 				}
 			}
 		}
 		if(slot_number2 != 0){
 			if(equipment_stat2.rank == "SS"){
-				for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){
-					needEXP_slot2 += table_SS[i];
+				if(equipment_stat2.levelType == 1500){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_1500[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
+				}
+				else if(equipment_stat2.levelType == 1250){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_1250[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
+				}
+				else if(equipment_stat2.levelType == 1000){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_1000[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
+				}
+				else if(equipment_stat2.levelType == 750){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_750[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
+				}
+				else if(equipment_stat2.levelType == 625){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_625[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
+				}
+				else if(equipment_stat2.levelType == 500){
+					for(var i = equipment_stat2.LVL; i<=equipment_goal_level2; i++){  // first setting of equipment_stat.LVL is 0
+						needEXP_slot2 += table_SS_500[i];
+					}
+					calcMaterialNum(needEXP_slot2, 2, equipment_stat2.name);
 				}
 			}
 		}
 		if(slot_number3 != 0){
 			if(equipment_stat3.rank == "SS"){
-				for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
-					needEXP_slot3 += table_SS[i];
+				if(equipment_stat3.levelType == 1500){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_1500[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
+				}
+				else if(equipment_stat3.levelType == 1250){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_1250[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
+				}
+				else if(equipment_stat3.levelType == 1000){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_1000[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
+				}
+				else if(equipment_stat3.levelType == 750){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_750[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
+				}
+				else if(equipment_stat3.levelType == 625){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_625[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
+				}
+				else if(equipment_stat3.levelType == 500){
+					for(var i = equipment_stat3.LVL; i<=equipment_goal_level3; i++){
+						needEXP_slot3 += table_SS_500[i];
+					}
+					calcMaterialNum(needEXP_slot3, 3, equipment_stat3.name);
 				}
 			}
 		}
 		if(slot_number4 != 0){
 			if(equipment_stat4.rank == "SS"){
-				for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
-					needEXP_slot4 += table_SS[i];
+				if(equipment_stat4.levelType == 1500){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_1500[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
+				}
+				else if(equipment_stat4.levelType == 1250){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_1250[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
+				}
+				else if(equipment_stat4.levelType == 1000){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_1000[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
+				}
+				else if(equipment_stat4.levelType == 750){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_750[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
+				}
+				else if(equipment_stat4.levelType == 625){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_625[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
+				}
+				else if(equipment_stat4.levelType == 500){
+					for(var i = equipment_stat4.LVL; i<=equipment_goal_level4; i++){
+						needEXP_slot4 += table_SS_500[i];
+					}
+					calcMaterialNum(needEXP_slot4, 4, equipment_stat4.name);
 				}
 			}
 		}
@@ -466,4 +642,42 @@ function writeData(str1, str2, str3)
 	if(str1.endsWith('HP')){
 		$('#'+str1+'.'+str2).prepend('추가 HP: +');
 	}
+}
+
+function calcMaterialNum(exp, slot_num, name){
+	var material_SS;
+	var material_S;
+	var material_A;
+	var material_B;
+	
+	material_SS = exp/375;
+	material_S = exp/200;
+	material_A = exp/100;
+	material_B = exp/50;
+	
+	$('#name_slot'+slot_num).text(name);
+	$('#SS_slot'+slot_num).text(Math.ceil(material_SS)+' 개');
+	$('#S_slot'+slot_num).text(Math.ceil(material_S)+' 개');
+	$('#A_slot'+slot_num).text(Math.ceil(material_A)+' 개');
+	$('#B_slot'+slot_num).text(Math.ceil(material_B)+' 개');
+	
+	calcResource(Math.ceil(material_SS), Math.ceil(material_S), Math.ceil(material_A), Math.ceil(material_B), slot_num, name);
+}
+
+function calcResource(rank_SS, rank_S, rank_A, rank_B, slot_num, name){
+	var cost_SS;
+	var cost_S;
+	var cost_A;
+	var cost_B;
+	
+	cost_SS = 400*rank_SS;
+	cost_S = 200*rank_S;
+	cost_A = 100*rank_A;
+	cost_B = 50*rank_B;
+	
+	$('#slot_name'+slot_num).text(name);
+	$('#SS_cost_slot'+slot_num).text(cost_SS);
+	$('#S_cost_slot'+slot_num).text(cost_S);
+	$('#A_cost_slot'+slot_num).text(cost_A);
+	$('#B_cost_slot'+slot_num).text(cost_B);
 }
