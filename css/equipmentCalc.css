@@ -29,7 +29,7 @@ ul {
 	max-width: 1500px;
     background-color: #fdfdfd;
 	display: inline;
-	border: 1px solid blue;
+	border: 0px solid blue;
 }
 
 .container.stat {

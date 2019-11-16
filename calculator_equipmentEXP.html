@@ -285,127 +285,136 @@
 				<button class="btn btn-secondary" onclick="calcEXP()">
 					Go!
 				</button>
+				<button id="cost" class="btn btn-secondary" onclick="showEquipmentCost()">
+					강화 비용
+				</button>
+				<button id="result" class="btn btn-secondary">
+					강화 결과
+				</button>
 			</div>
-		
 		
 			<br><br>
-			<div class="stat-container">
-				<div class="container stat" >
-					<h3>장비 1의 강화 결과</h3>
-					<div class="info-container">
-						<div class="image slot1"></div>
-						<div class="name slot1">
-							<h4 id="name" class="slot1"></h4>
-						</div>
+			
+			<div id="canvas">
+				<div class="stat-container">
+					<div class="container stat" >
+						<h4 class="equipment_name_slot1"></h4>
+						<div class="info-container">
+							<div class="image slot1"></div>
+							<div class="name slot1">
+								<h4 id="name" class="slot1"></h4>
+							</div>
 				
-						<div class="LVL slot1">
-							<h3 id="LVL" class="slot1">LV. </h3>
+							<div class="LVL slot1">
+								<h3 id="LVL" class="slot1">LV. </h3>
+							</div>
+							<div class="spec-wrap">
+								<div class="spec-item">랭크</div><div class="spec-item slot1" id="rank"></div>
+								<div class="spec-item slot1" id="HP"></div>
+								<div class="spec-item">추가 공격력</div><div class="spec-item slot1" id="ATK"></div>
+								<div class="spec-item">추가 치명타</div><div class="spec-item slot1" id="CRT"></div>
+								<div class="spec-item">추가 방어력</div><div class="spec-item slot1" id="DEF"></div>
+								<div class="spec-item">추가 적중률</div><div class="spec-item slot1" id="HIT"></div>
+								<div class="spec-item">추가 행동력</div><div class="spec-item slot1" id="AGI"></div>
+								<div class="spec-item">추가 회피율</div><div class="spec-item slot1" id="DOD"></div>
+							</div>
 						</div>
-						<div class="spec-wrap">
-							<div class="spec-item">랭크</div><div class="spec-item slot1" id="rank"></div>
-							<div class="spec-item slot1" id="HP"></div>
-							<div class="spec-item">추가 공격력</div><div class="spec-item slot1" id="ATK"></div>
-							<div class="spec-item">추가 치명타</div><div class="spec-item slot1" id="CRT"></div>
-							<div class="spec-item">추가 방어력</div><div class="spec-item slot1" id="DEF"></div>
-							<div class="spec-item">추가 적중률</div><div class="spec-item slot1" id="HIT"></div>
-							<div class="spec-item">추가 행동력</div><div class="spec-item slot1" id="AGI"></div>
-							<div class="spec-item">추가 회피율</div><div class="spec-item slot1" id="DOD"></div>
-						</div>
+			
+						<br>
+						<h3>장비 설명</h3>
+						<div class="descript-wrap slot1" id="descript"></div>
+			
 					</div>
-			
-					<br>
-					<h3>장비 설명</h3>
-					<div class="descript-wrap slot1" id="descript"></div>
-			
-				</div>
 		
-				<div class="container stat" >
-					<h3>장비 2의 강화 결과</h3>
-					<div class="info-container">
-						<div class="image slot2"></div>
-						<div class="name slot2">
-							<h4 id="name" class="slot2"></h4>
-						</div>
+					<div class="container stat" >
+						<h4 class="equipment_name_slot2"></h4>
+						<div class="info-container">
+							<div class="image slot2"></div>
+							<div class="name slot2">
+								<h4 id="name" class="slot2"></h4>
+							</div>
 				
-						<div class="LVL slot2">
-							<h3 id="LVL" class="slot2">LV. </h3>
+							<div class="LVL slot2">
+								<h3 id="LVL" class="slot2">LV. </h3>
+							</div>
+							<div class="spec-wrap">
+								<div class="spec-item">랭크</div><div class="spec-item slot2" id="rank"></div>
+								<div class="spec-item slot2" id="HP"></div>
+								<div class="spec-item">추가 공격력</div><div class="spec-item slot2" id="ATK"></div>
+								<div class="spec-item">추가 치명타</div><div class="spec-item slot2" id="CRT"></div>
+								<div class="spec-item">추가 방어력</div><div class="spec-item slot2" id="DEF"></div>
+								<div class="spec-item">추가 적중률</div><div class="spec-item slot2" id="HIT"></div>
+								<div class="spec-item">추가 행동력</div><div class="spec-item slot2" id="AGI"></div>
+								<div class="spec-item">추가 회피율</div><div class="spec-item slot2" id="DOD"></div>
+							</div>
 						</div>
-						<div class="spec-wrap">
-							<div class="spec-item">랭크</div><div class="spec-item slot2" id="rank"></div>
-							<div class="spec-item slot2" id="HP"></div>
-							<div class="spec-item">추가 공격력</div><div class="spec-item slot2" id="ATK"></div>
-							<div class="spec-item">추가 치명타</div><div class="spec-item slot2" id="CRT"></div>
-							<div class="spec-item">추가 방어력</div><div class="spec-item slot2" id="DEF"></div>
-							<div class="spec-item">추가 적중률</div><div class="spec-item slot2" id="HIT"></div>
-							<div class="spec-item">추가 행동력</div><div class="spec-item slot2" id="AGI"></div>
-							<div class="spec-item">추가 회피율</div><div class="spec-item slot2" id="DOD"></div>
-						</div>
+			
+						<br>
+						<h3>장비 설명</h3>
+						<div class="descript-wrap slot2" id="descript"></div>
+			
 					</div>
-			
-					<br>
-					<h3>장비 설명</h3>
-					<div class="descript-wrap slot2" id="descript"></div>
-			
 				</div>
-			</div>
 			
-			<div class="stat-container">
-				<div class="container stat" >
-					<h3>장비 3의 강화 결과</h3>
-					<div class="info-container">
-						<div class="image slot3"></div>
-						<div class="name slot3">
-							<h4 id="name" class="slot3"></h4>
-						</div>
+			
+				<div class="stat-container">
+					<div class="container stat" >
+						<h4 class="equipment_name_slot3"></h4>
+						<div class="info-container">
+							<div class="image slot3"></div>
+							<div class="name slot3">
+								<h4 id="name" class="slot3"></h4>
+							</div>
 				
-						<div class="LVL slot3">
-							<h3 id="LVL" class="slot3">LV. </h3>
+							<div class="LVL slot3">
+								<h3 id="LVL" class="slot3">LV. </h3>
+							</div>
+							<div class="spec-wrap">
+								<div class="spec-item">랭크</div><div class="spec-item slot3" id="rank"></div>
+								<div class="spec-item slot3" id="HP"></div>
+								<div class="spec-item">추가 공격력</div><div class="spec-item slot3" id="ATK"></div>
+								<div class="spec-item">추가 치명타</div><div class="spec-item slot3" id="CRT"></div>
+								<div class="spec-item">추가 방어력</div><div class="spec-item slot3" id="DEF"></div>
+								<div class="spec-item">추가 적중률</div><div class="spec-item slot3" id="HIT"></div>
+								<div class="spec-item">추가 행동력</div><div class="spec-item slot3" id="AGI"></div>
+								<div class="spec-item">추가 회피율</div><div class="spec-item slot3" id="DOD"></div>
+							</div>
 						</div>
-						<div class="spec-wrap">
-							<div class="spec-item">랭크</div><div class="spec-item slot3" id="rank"></div>
-							<div class="spec-item slot3" id="HP"></div>
-							<div class="spec-item">추가 공격력</div><div class="spec-item slot3" id="ATK"></div>
-							<div class="spec-item">추가 치명타</div><div class="spec-item slot3" id="CRT"></div>
-							<div class="spec-item">추가 방어력</div><div class="spec-item slot3" id="DEF"></div>
-							<div class="spec-item">추가 적중률</div><div class="spec-item slot3" id="HIT"></div>
-							<div class="spec-item">추가 행동력</div><div class="spec-item slot3" id="AGI"></div>
-							<div class="spec-item">추가 회피율</div><div class="spec-item slot3" id="DOD"></div>
-						</div>
+			
+						<br>
+						<h3>장비 설명</h3>
+						<div class="descript-wrap slot3" id="descript"></div>
+			
 					</div>
-			
-					<br>
-					<h3>장비 설명</h3>
-					<div class="descript-wrap slot3" id="descript"></div>
-			
-				</div>
 		
-				<div class="container stat" >
-					<h3>장비 4의 강화 결과</h3>
-					<div class="info-container">
-						<div class="image slot4"></div>
-						<div class="name slot4">
-							<h4 id="name" class="slot4"></h4>
-						</div>
+					<div class="container stat" >
+						<h4 class="equipment_name_slot4"></h4>
+						<div class="info-container">
+							<div class="image slot4"></div>
+							<div class="name slot4">
+								<h4 id="name" class="slot4"></h4>
+							</div>
 				
-						<div class="LVL slot4">
-							<h3 id="LVL" class="slot4">LV. </h3>
+							<div class="LVL slot4">
+								<h3 id="LVL" class="slot4">LV. </h3>
+							</div>
+							<div class="spec-wrap">
+								<div class="spec-item">랭크</div><div class="spec-item slot4" id="rank"></div>
+								<div class="spec-item slot4" id="HP"></div>
+								<div class="spec-item">추가 공격력</div><div class="spec-item slot4" id="ATK"></div>
+								<div class="spec-item">추가 치명타</div><div class="spec-item slot4" id="CRT"></div>
+								<div class="spec-item">추가 방어력</div><div class="spec-item slot4" id="DEF"></div>
+								<div class="spec-item">추가 적중률</div><div class="spec-item slot4" id="HIT"></div>
+								<div class="spec-item">추가 행동력</div><div class="spec-item slot4" id="AGI"></div>
+								<div class="spec-item">추가 회피율</div><div class="spec-item slot4" id="DOD"></div>
+							</div>
 						</div>
-						<div class="spec-wrap">
-							<div class="spec-item">랭크</div><div class="spec-item slot4" id="rank"></div>
-							<div class="spec-item slot4" id="HP"></div>
-							<div class="spec-item">추가 공격력</div><div class="spec-item slot4" id="ATK"></div>
-							<div class="spec-item">추가 치명타</div><div class="spec-item slot4" id="CRT"></div>
-							<div class="spec-item">추가 방어력</div><div class="spec-item slot4" id="DEF"></div>
-							<div class="spec-item">추가 적중률</div><div class="spec-item slot4" id="HIT"></div>
-							<div class="spec-item">추가 행동력</div><div class="spec-item slot4" id="AGI"></div>
-							<div class="spec-item">추가 회피율</div><div class="spec-item slot4" id="DOD"></div>
-						</div>
+			
+						<br>
+						<h3>장비 설명</h3>
+						<div class="descript-wrap slot4" id="descript"></div>
+			
 					</div>
-			
-					<br>
-					<h3>장비 설명</h3>
-					<div class="descript-wrap slot4" id="descript"></div>
-			
 				</div>
 			</div>
 		</div>

@@ -13,10 +13,25 @@ var showResult_cnt_slot2 = -1;
 var showResult_cnt_slot3 = -1;
 var showResult_cnt_slot4 = -1;
 
+var showEquipmentStatflag = false;
+var showEquipmentCostflag = false;
+
 window.onload = async function(){
 	var equipment_data = await loadEquipmentStatDataArr()
+	$('#canvas').hide();
 	
 	drawEquipmentList(equipment_data);
+	
+	$('#result').click(function(){
+		if(showEquipmentStatflag == false){
+			showEquipmentStatflag = true;
+			$('#canvas').show(1000);
+		}
+		else if(showEquipmentStatflag == true){
+			showEquipmentStatflag = false;
+			$('#canvas').hide(1000);
+		}
+	})
 }
 
 function drawEquipmentList(data){
@@ -366,6 +381,8 @@ function showData(data, slot){
 	equipment_HIT_final = data.HIT + (data.HIT_perlevel*equipment_level_final);
 	equipment_HP_final = data.HP + (data.HP_perlevel*equipment_level_final);
 	
+	
+	$('.equipment_name_slot'+slot).text(equipment_name+" 의 강화 결과");
 	$('#name.slot'+slot).append(equipment_name);
 	$('.image.slot'+slot).append("<img src=img/equip/"+data.img+".png style= width 100% />");
 	writeData('LVL', 'slot'+slot, equipment_level_final);
@@ -450,4 +467,3 @@ function writeData(str1, str2, str3)
 		$('#'+str1+'.'+str2).prepend('추가 HP: +');
 	}
 }
-
