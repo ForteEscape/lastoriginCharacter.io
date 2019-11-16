@@ -25,13 +25,13 @@ window.onload = async function(){
 	$('#result').click(function(){
 		if(showEquipmentStatflag == false){
 			showEquipmentStatflag = true;
-			$('#canvas').show(1000);
+			$('#canvas').show();
 		}
 		else if(showEquipmentStatflag == true){
 			showEquipmentStatflag = false;
-			$('#canvas').hide(1000);
+			$('#canvas').hide();
 		}
-	})
+	});
 }
 
 function drawEquipmentList(data){
