@@ -136,24 +136,62 @@
 							<td>
 								<div class="form-group" style="text-align: center">
 									<select class="form-control" id="character_currentLv_slot1">
-										<option id="current_none">없음</option>
-										<!-- insert option with js-->
+										<option class="current_none">없음</option>
+										<!-- insert option using js-->
 									</select>
 								</div>
 							</td>
 							<td>
 								<div class="form-group" style="text-align: center">
 									<select class="form-control" id="character_goalLv_slot1">
-										<option id="goal_none">없음</option>
+										<option class="goal_none">없음</option>
+										<!-- insert option using js -->
 									</select> 
 								</div>
 							</td>
 							<td id="currentEXP_slot1" style="text-align: center">-</td>
 							<td id="goalEXP_slot1" style="text-align: center">-</td>
 						</tr>
+						
+						<tr>
+							<td scope="row">
+								<div id="img_slot2" style="text-align: center">
+									
+								</div>
+							</td>
+							<td>
+								<div class="dropdown" style="text-align: center">
+									<button class="btn btn-secondary dropdown-toggle" id="character_name2" data-toggle="dropdown">
+										케릭터 목록
+									</button>
+									<div class="dropdown-menu" id="characterList2">
+										<a href="#" class="dropdown-item" id="slot2" onclick="init_text(2)">없음</a>
+									</div>
+								</div>
+							</td>
+							<td id="rank_slot2" style="text-align: center"></td>
+							<td>
+								<div class="form-group" style="text-align: center">
+									<select class="form-control" id="character_currentLv_slot2">
+										<option class="current_none">없음</option>
+										<!-- insert option using js-->
+									</select>
+								</div>
+							</td>
+							<td>
+								<div class="form-group" style="text-align: center">
+									<select class="form-control" id="character_goalLv_slot2">
+										<option class="goal_none">없음</option>
+										<!-- insert option using js -->
+									</select> 
+								</div>
+							</td>
+							<td id="currentEXP_slot2" style="text-align: center">-</td>
+							<td id="goalEXP_slot2" style="text-align: center">-</td>
+						</tr>
 					</tbody>
 				</table>
-				<button class="btn btn-secondary" onclick="">
+				<button class="btn btn-secondary" onclick="characterExpCalc()">
 					Go!
 				</button>
 			</div>

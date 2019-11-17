@@ -233,6 +233,7 @@ async function calcEXP(){
 		equipment_stat4 = await loadEquipmentStatData(equipment_arr[equipmentParam_slot4].id);
 	}
 	
+	// TODO: make equipment_goal_level refer to class
 	if(slot_number1 != 0){
 		equipment_goal_level = $('#level_slot1 option:selected').attr('id');
 	}
