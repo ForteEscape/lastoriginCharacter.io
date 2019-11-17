@@ -68,3 +68,13 @@ async function loadEquipmentStatDataArr(){
 		})
 	});
 }
+
+async function loadCharacterStatDataArr(){
+	return new Promise((resolve, reject)=>{
+		var src="./data/characterData.js";
+		loadData(src).then(()=>{
+			var characterDataArr = characterStatDataArr;
+			resolve(characterDataArr);
+		})
+	})
+}

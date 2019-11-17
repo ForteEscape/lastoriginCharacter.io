@@ -16,7 +16,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/index_dropdown.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="./js/index.js"></script>
+		<script src="./js/base.js"></script>
+		<script src="./js/calc_characterEXP.js"></script>
 		
 		<!-- init -->
 		<style>
@@ -97,6 +100,64 @@
 				</ul>
 			</div>
 		</nav>
+		
+		<br><br>
+		<div class="container">
+			<div class="container">
+				<h2>라스트 오리진 케릭터 계산기</h2>
+				<table class="table table-striped table-dark">
+					<thead>
+						<th scope="col" style="width: 160px; text-align: center">케릭터 이미지</th>
+						<th scope="col" style="text-align: center">케릭터</th>
+						<th scope="col" style="width: 120px; text-align: center">케릭터 랭크</th>
+						<th scope="col" style="width: 120px; text-align: center">현재 레벨</th>
+						<th scope="col" style="width: 120px; text-align: center">목표 레벨</th>
+						<th scope="col" style="width: 160px; text-align: center">현재 경험치</th>
+						<th scope="col" style="width: 160px; text-align: center">필요 경험치</th>
+ 					</thead>
+					<tbody>
+						<tr>
+							<td scope="row">
+								<div id="img_slot1" style="text-align: center">
+									
+								</div>
+							</td>
+							<td>
+								<div class="dropdown" style="text-align: center">
+									<button class="btn btn-secondary dropdown-toggle" id="character_name1" data-toggle="dropdown">
+										케릭터 목록
+									</button>
+									<div class="dropdown-menu" id="characterList1">
+										<a href="#" class="dropdown-item" id="slot1" onclick="">없음</a>
+									</div>
+								</div>
+							</td>
+							<td id="rank_slot1" style="text-align: center"></td>
+							<td>
+								<div class="form-group" style="text-align: center">
+									<select class="form-control" id="character_currentLv_slot1">
+										<option id="current_none">없음</option>
+										<!-- insert option with js-->
+									</select>
+								</div>
+							</td>
+							<td>
+								<div class="form-group" style="text-align: center">
+									<select class="form-control" id="character_goalLv_slot1">
+										<option id="goal_none">없음</option>
+									</select> 
+								</div>
+							</td>
+							<td id="currentEXP_slot1" style="text-align: center">-</td>
+							<td id="goalEXP_slot1" style="text-align: center">-</td>
+						</tr>
+					</tbody>
+				</table>
+				<button class="btn btn-secondary" onclick="">
+					Go!
+				</button>
+			</div>
+		</div>
 		
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

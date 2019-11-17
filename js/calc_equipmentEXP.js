@@ -18,6 +18,7 @@ var showEquipmentCostflag = false;
 
 window.onload = async function(){
 	var equipment_data = await loadEquipmentStatDataArr()
+	
 	$('#canvas').hide();
 	$('#cost_canvas').hide();
 	

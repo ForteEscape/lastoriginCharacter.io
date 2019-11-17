@@ -2,6 +2,7 @@ var characterStatDataArr=[
 	{
 		"id": "miho",
 		"name":"T-14 미호",
+		"img":"Miho_basic",
 		"type": "light",
 		"role":"Dealer",
 		"brood":"bioroid",
@@ -28,6 +29,7 @@ var characterStatDataArr=[
 	{
 		"id": "beasthunter",
 		"name":"AT-100 비스트헌터",
+		"img":"BeastHunter_basic",
 		"type": "heavy",
 		"role":"Dealer",
 		"brood":"bioroid",
@@ -55,6 +57,7 @@ var characterStatDataArr=[
 	{
 		"id": "valkyrie",
 		"name":"T-8W 발키리",
+		"img":"Valkyrie_basic",
 		"type": "light",
 		"role":"Dealer",
 		"brood":"bioroid",
@@ -82,6 +85,7 @@ var characterStatDataArr=[
 	{
 		"id": "may",
 		"name":"멸망의 메이",
+		"img":"May_basic",
 		"type": "mobile",
 		"role":"Dealer",
 		"brood":"bioroid",
@@ -110,6 +114,7 @@ var characterStatDataArr=[
 	{
 		"id": "phoenix",
 		"name":"GS-130 피닉스",
+		"img":"Phoenix_basic",
 		"type": "mobile",
 		"role":"Dealer",
 		"brood":"bioroid",
@@ -137,6 +142,7 @@ var characterStatDataArr=[
 	{
 		"id": "gigantes",
 		"name":"S5 기간테스",
+		"img":"Gigantes_basic",
 		"type": "heavy",
 		"role":"tanker",
 		"brood":"ags",
