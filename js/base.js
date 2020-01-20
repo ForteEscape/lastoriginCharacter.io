@@ -59,6 +59,7 @@ function getURLParameter(sParam)
 	}
 }
 
+// 장비 스텟 더미
 async function loadEquipmentStatDataArr(){
 	return new Promise((resolve, reject)=> {
 		var src = "./data/equipmentData.js";
@@ -69,6 +70,7 @@ async function loadEquipmentStatDataArr(){
 	});
 }
 
+// 케릭터 스텟 더미
 async function loadCharacterStatDataArr(){
 	return new Promise((resolve, reject)=>{
 		var src="./data/characterData.js";

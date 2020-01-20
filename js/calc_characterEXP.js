@@ -133,6 +133,16 @@ async function characterExpCalc(){ // main
 	var characterCurrentLv_slot2;
 	var characterCurrentLv_slot3;
 	var characterCurrentLv_slot4;
+
+	// 캐릭터 레벨 경험치책
+	var expbook1 = 3000;
+	var expbook2 = 100000;
+	var expbook3 = 1000000;
+
+	// 캐릭터 스킬 경험치책
+	var skillexpbook = 1000;
+	var skillexpbook2 = 10000;
+	var skillexpbook3 = 100000;
 	
 	var characterGoalLv_slot1;
 	var characterGoalLv_slot2;
