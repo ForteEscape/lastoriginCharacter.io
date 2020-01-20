@@ -1,6 +1,6 @@
 # lastoriginCharacter.io
 > 1. 아직 개발중..
-> 2. 사이트 링크 <https://forteescape.github.io/lastoriginCharacter.io/>
+> 2. 사이트 링크 <https://forteescape.github.io/lastoriginCharacter.io/.>
 
 ## 사용 라이브러리
 1. jQuery(ver 3.4.1)
